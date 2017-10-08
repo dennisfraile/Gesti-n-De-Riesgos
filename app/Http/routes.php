@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::group(['middleware'=>['web']], function ()
+{
+
+    route::resource('tratamiento_riesgos','TratamientoRiesgo\TratamientoRiesgoController');
+    route::resource('tipo_tratamientos','TratamientoRiesgo\TipoTratamientoRiesgoController');
+   // route::get('dashboard','Desktop\DashboardController@index');
+
+});
