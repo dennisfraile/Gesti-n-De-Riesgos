@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\TratamientoRiesgo;
 
 use Illuminate\Http\Request;
-
+use App\Models\TratamientoRiesgo\TratamientoRiesgo;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -17,8 +17,8 @@ class TratamientoRiesgoController extends Controller
     public function index()
     {
         //
-        return 
-        view('tratamiento', $tratamiento);
+        $tratamientos_riesgos = TratamientoRiesgo::select(all);
+        return view('tratamiento', $tratamientos);
         
     }
 
