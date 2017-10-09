@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['middleware' => ['web']], function(){
+	route::get('Informacion', 'ImformacionE\InformacionController@informacion');
+});
