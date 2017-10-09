@@ -1,18 +1,18 @@
 @extends('layouts.master')
 
-@section('title','Panel de Control')
+@section('title','Sistema de Gestion de Riesgo de Activos')
 
 @section('content')
 
    <ol class="breadcrumb">
-     <li>Panel de Control</li>
-     <li class="active">Escritorio</li>
+     <li>Sistema de Gestion de Riesgo de Activos</li>
+     <li class="active">Principal</li>
    </ol>
 
    <!-- Main component for a primary marketing message or call to action -->
-   <div class="page-header">
+   <!--<div class="page-header">
      <h1>Estadistica <small>Visitas activas</small></h1>
-   </div>
+   </div>-->
 
    <div class="row">
      <div class="col-md-8">
