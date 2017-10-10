@@ -1,12 +1,21 @@
 @extends('layouts.master')
 
+<<<<<<< HEAD
 @section('title','Sistema de Gestion de Riesgo de Activos')
+=======
+@section('title','Sistema de Gestion de Riesgo en Activos')
+>>>>>>> Brallan_Sanchez
 
 @section('content')
 
    <ol class="breadcrumb">
+<<<<<<< HEAD
      <li>Sistema de Gestion de Riesgo de Activos</li>
      <li class="active">Principal</li>
+=======
+     <li>Sistema de Gestion de Riesgo en Activos</li>
+     <li class="active">Inicio</li>
+>>>>>>> Brallan_Sanchez
    </ol>
 
    <!-- Main component for a primary marketing message or call to action -->

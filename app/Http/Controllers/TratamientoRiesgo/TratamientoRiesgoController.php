@@ -17,8 +17,8 @@ class TratamientoRiesgoController extends Controller
     public function index()
     {
         //
-        //$tratamiento_riesgos = TratamientoRiesgo::select(all);
-        return 'hola';//view('tratamiento', $tratamientos);
+        $tratamientoriesgo = TratamientoRiesgo::all();
+        return view('tratamiento_riesgos\tratamientoriesgo')->with('tratamientoriesgo',$tratamientoriesgo);
         
     }
 
