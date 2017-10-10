@@ -4,6 +4,8 @@ namespace App\Http\Controllers\TratamientoRiesgo;
 
 use Illuminate\Http\Request;
 use App\Models\TratamientoRiesgo\TratamientoRiesgo;
+use App\Models\TratamientoRiesgo\TipoTratamiento;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -17,8 +19,12 @@ class TratamientoRiesgoController extends Controller
     public function index()
     {
         //
-        $tratamientoriesgo = TratamientoRiesgo::all();
-        return view('tratamiento_riesgos\tratamientoriesgo')->with('tratamientoriesgo',$tratamientoriesgo);
+        $tratamientos = TratamientoRiesgo::select('tratamientoriesgo.idtratamiento',
+        'tratamientoriesgo.nombretratamiento as tratamientoriesgo','tratamientoriesgo.descriptratamiento as tratamientoriesgo',
+        'tipotratamiento.nombretipotrata as tipotratamiento')
+        ->join('tipotratamiento','tipotratamiento.idtipotratamiento','=','tratamientoriesgo.id')
+        ->get();
+        return View('tratamiento_riesgo/tratamiento_riesgo')->with('tratamiento_riesgos',$tratamientos);
         
     }
 

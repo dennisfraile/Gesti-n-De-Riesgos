@@ -13,7 +13,7 @@ class CreateTratamientoTable extends Migration
     public function up()
     {
         //
-        Schema::create('tratamiento',function(Blueprint $table){
+        Schema::create('tratamientoriesgo',function(Blueprint $table){
             $table->increments('idtratamiento');
             $table->string('nombretratamiento',30);
             $table->string('descriptratamiento',30);

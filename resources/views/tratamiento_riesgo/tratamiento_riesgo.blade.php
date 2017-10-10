@@ -1,19 +1,19 @@
 @extends('layouts.master')
 
-@section('title','Lista de Productos')
+@section('title','Lista de Tratamientos')
 
 @section('content')
 
    <!-- Main component for a primary marketing message or call to action -->
    
   <ol class="breadcrumb">
-     <li><a href="{{url('dashboard')}}">Escritorio</a></li>
-     <li class="active">Productos</li>
+     <li><a href="{{url('dashboard')}}">Principal</a></li>
+     <li class="active">Tratamiento de Riesgo</li>
    </ol>
    <div class="page-header">
-     <h1>Productos <small>Actualizados hasta hoy</small></h1>
+     <h1>Tratamientos <small>Registrados hasta este momento</small></h1>
    </div>
-  @include('partials.messages')
+  
    <div class="row">
      <div class="col-md-8">
 
@@ -29,18 +29,18 @@
              <table class="table table-bordered">
                <thead>
                   <th>Nombre</th>
-                  <th>Precio</th>
-                  <th>Marca</th>
+                  <th>Descripcion</th>
+                  <th>Tipo de Tratamiento</th>
                   <th>Acción</th>
                </thead>
                <tbody>
-               @foreach($products as $product)
+               @foreach($tratamientos as $tratamiento)
                   <tr>
-                     <td>{{$product->product}}</td>
-                     <td>{{$product->price}}</td>
-                     <td>{{$product->mark}}</td>
-                     <td><a href="{{route('product.edit',$product->id)}}">[Editar]</a> 
-                     <a href="{{route('product.show',$product->id)}}">[Eliminar]</a></td>
+                     <td>{{$tratamiento->nombretratamiento}}</td>
+                     <td>{{$tratamiento->descriptratamiento}}</td>
+                     <td>{{$tratamiento->id}}</td>
+                     <td><a href="{{route('tratamiento_riesgo.edit',$tratamiento->idtratamiento)}}">[Editar]</a> 
+                     <a href="{{route('tratamiento_riesgo.show',$tratamiento->idtratamiento)}}">[Eliminar]</a></td>
                   </tr>
                @endforeach
                </tbody>
@@ -48,7 +48,7 @@
 
              </table>
            <div class='text-center'>
-              {!!$products->links()!!}
+              {!!$tratamiento->links()!!}
            </div>
 
           </div>
@@ -61,7 +61,7 @@
 <script>
   $("#nuevo").click(function(event)
   {
-      document.location.href = "{{ route('product.create')}}";
+      document.location.href = "{{ route('tratamiento_riesgo.create')}}";
   });
 </script>
   
