@@ -13,15 +13,14 @@ class CreateTratamientoTable extends Migration
     public function up()
     {
         //
-        Schema::create('tratamientoriesgo',function(Blueprint $table){
+        Schema::create('tratamiento',function(Blueprint $table){
             $table->increments('idtratamiento');
             $table->string('nombretratamiento',30);
-            $table->string('descriptratamiento',200);
-            $table->integer('idtipotratamiento_fk')->unsigned();
-            $table->foreign('idtipotratamiento_fk')->references('idtipotratamiento')->on('tipotratamiento');
-            $table->integer('idactivo_fk')->unsigned();
-            $table->foreign('idactivo_fk')->references('idactivo')->on('activo');
+            $table->string('descriptratamiento',30);
+            $table->integer('id')->unsigned();
+            $table->foreign('id')->references('idtipotratamiento')->on('tipotratamiento');
         });
+
     }
 
     /**
@@ -31,6 +30,6 @@ class CreateTratamientoTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('tratamientoriesgo');
     }
 }

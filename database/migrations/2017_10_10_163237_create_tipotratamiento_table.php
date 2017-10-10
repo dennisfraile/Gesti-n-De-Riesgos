@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTipoTratamientoTable extends Migration
+class CreateTipotratamientoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +14,10 @@ class CreateTipoTratamientoTable extends Migration
     {
         //
         Schema::create('tipotratamiento',function(Blueprint $table){
-         $table->increments('idtipotratamiento');
-         $table->string('nombretipotrata',25);
-         $table->string('descriptipotrata',100);
-         
-        });
+            $table->increments('idtipotratamiento');
+            $table->string('nombretipotrata',25);
+            $table->string('descriptipotrata',100);
+          });
     }
 
     /**
@@ -29,6 +28,5 @@ class CreateTipoTratamientoTable extends Migration
     public function down()
     {
         //
-        Schema::drop('tipotratamiento');
     }
 }
