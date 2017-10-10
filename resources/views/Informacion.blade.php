@@ -3,9 +3,10 @@
 	<head>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+		<link rel="stylesheet" href="estilos.css">
 		<title>Informacion de la empresa</title>
 	</head>
-	<body>
+	<body >
 		<div class="container">
 			<h1 class="text-center">Informacion de la empresa</h1>
 			<br>
@@ -33,14 +34,9 @@
 						<br>
 						<h4 class="text-success">Objetivos de la empresa</h4>
 						<br>
-						<label class="control-label col-sm-4 text-primary" for="NomE">Objetivos Generales</label>
+						<label class="control-label col-sm-4 text-primary" for="NomE">Objetivos</label>
       					<div class="col-sm-10">
         					<textarea rows="2" col="50" class="form-control" id="objGe" name="ObjetivoGeneral"></textarea>
-      					</div>
-      					<label class="control-label col-sm-4 text-primary" for="NomE">Objetivos Especificos</label>
-      					<div class="col-sm-10">
-        					<textarea rows="2" col="50" class="form-control" id="objEs" name="ObjetivoEspecifico"></textarea>
-      					</div>
       					<br>
       					<div class="col-sm-10">
       						<button type="button" class="btn btn-outline-primary">Guardar</button>
