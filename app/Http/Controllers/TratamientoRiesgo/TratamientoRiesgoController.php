@@ -19,12 +19,12 @@ class TratamientoRiesgoController extends Controller
     public function index()
     {
         //
-        $tratamientos = TratamientoRiesgo::select('tratamientoriesgo.idtratamiento',
+        $tratamientoriesgo = TratamientoRiesgo::select('tratamientoriesgo.idtratamiento',
         'tratamientoriesgo.nombretratamiento as tratamientoriesgo','tratamientoriesgo.descriptratamiento as tratamientoriesgo',
         'tipotratamiento.nombretipotrata as tipotratamiento')
         ->join('tipotratamiento','tipotratamiento.idtipotratamiento','=','tratamientoriesgo.id')
         ->get();
-        return View('tratamiento_riesgo/tratamiento_riesgo')->with('tratamiento_riesgos',$tratamientos);
+        return View('tratamiento_riesgo/tratamiento_riesgo')->with('tratamiento_riesgos',$tratamientoriesgo);
         
     }
 

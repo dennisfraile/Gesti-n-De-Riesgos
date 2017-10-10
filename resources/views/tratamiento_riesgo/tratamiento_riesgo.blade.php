@@ -34,11 +34,11 @@
                   <th>Acción</th>
                </thead>
                <tbody>
-               @foreach($tratamientos as $tratamiento)
+               @foreach($tratamientoriesgo as $tratamientoriesgo)
                   <tr>
-                     <td>{{$tratamiento->nombretratamiento}}</td>
-                     <td>{{$tratamiento->descriptratamiento}}</td>
-                     <td>{{$tratamiento->id}}</td>
+                     <td>{{$tratamientoriesgo->nombretratamiento}}</td>
+                     <td>{{$tratamientoriesgo->descriptratamiento}}</td>
+                     <td>{{$tratamientoriesgo->id}}</td>
                      <td><a href="{{route('tratamiento_riesgo.edit',$tratamiento->idtratamiento)}}">[Editar]</a> 
                      <a href="{{route('tratamiento_riesgo.show',$tratamiento->idtratamiento)}}">[Eliminar]</a></td>
                   </tr>
