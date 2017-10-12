@@ -6,12 +6,25 @@ use Illuminate\Database\Eloquent\Model;
 
 class Control extends Model
 {
-    //
     protected $table = 'control';
+
     protected $primparykey = 'idcontrol';
-    protected $fillable = ['idcontrol', 'descripcontrol',
-     'idtrat','encargado','fechainicio','fechafin','estado','presupuesto'];
-    //public $timestamps =['fechainicio','fechafin'];
+
+    public $timestamps=false;
+
+
+    protected $fillable=[
+        'idtratamiento', 
+        'descripcontrol',
+        'encargado',
+        'fechainicio',
+        'fechafin',
+        'estado',
+        'presupuesto'
+    ];
+
+
+   
     public function procedimiento(){
         return $this->hasmany(Procedimiento::class);
     }

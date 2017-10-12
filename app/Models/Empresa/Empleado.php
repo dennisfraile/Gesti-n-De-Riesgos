@@ -8,10 +8,22 @@ class Empleado extends Model
 {
     //
     protected $table = 'empleado';
+
     protected $primparykey = 'idempleado';
-    protected $fillable = ['idempleado', 'nombreempleado', 'apellido', 'email'
-    ,'foto','idempr','idrl'];
+
     public $timestamps =false;
+    
+
+    protected $fillable = [
+        'idempresa',
+        'idrol', 
+        'nombreempleado', 
+        'apellido', 
+        'email',
+        'foto'
+    ];
+
+    
     public function Rol(){
         return $this->belongsto(Rol::class);
     }

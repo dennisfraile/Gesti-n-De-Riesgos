@@ -8,9 +8,19 @@ class Vulnerabilidad extends Model
 {
     //
     protected $table = 'vulnerabilidad';
+
     protected $primparykey = 'idvulnerabilidad';
-    protected $fillable = ['idvulnerabilidad', 'nombrevulne', 'descripvulne','id_amz'];
+
     public $timestamps =false;
+
+
+    protected $fillable = [
+    	'idamenza', 
+    	'nombrevulne', 
+    	'descripvulne',
+    ];
+    
+
     public function amenaza(){
         return $this->belongsto(Amenaza::class);
     }

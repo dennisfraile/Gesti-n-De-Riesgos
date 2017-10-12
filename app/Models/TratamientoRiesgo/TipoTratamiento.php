@@ -8,9 +8,18 @@ class TipoTratamiento extends Model
 {
     //
     protected $table = 'tipotratamiento';
+
     protected $primarykey = 'idtipotratamiento';
-    protected $fillable = ['idtipotratamiento', 'nombretipotrata', 'descriptipotrata'];
-       public $timestamps=false;
+
+    public $timestamps=false;
+
+
+    protected $fillable = [
+    	'nombretipotrata', 
+    	'descriptipotrata'
+    ];
+
+       
     public function tratamientoriesgo(){
 
        	return $this->belongsto(TratamientoRiesgo::class);

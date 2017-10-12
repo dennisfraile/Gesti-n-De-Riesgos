@@ -8,9 +8,18 @@ class Amenaza extends Model
 {
     //
     protected $table = 'amenaza';
+
     protected $primparykey = 'idamenaza';
-    protected $fillable = ['idtamenaza', 'nombreamenaza', 'descripamenaza', 'idtamz'];
+
     public $timestamps =false;
+
+
+    protected $fillable = [
+    	'idtipoamenaza', 
+    	'nombreamenaza', 
+    	'descripamenaza'
+    ];
+    
     public function tipoamenaza(){
         return $this->hasmany(TipoAmenaza::class);
     }

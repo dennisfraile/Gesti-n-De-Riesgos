@@ -8,10 +8,19 @@ class Activo extends Model
 {
     //
     protected $table = 'activo';
+
     protected $primparykey = 'idactivo';
-    protected $fillable = ['idactivo', 'nombreactivo', 'descripactivo', 
-    'idta','idem'];
+
     public $timestamps =false;
+
+    protected $fillable = [
+        'idtipoactivo ',
+        'idempresa',
+        'nombreactivo', 
+        'descripactivo'
+    ];
+
+    
     public function tipoactivo(){
     	return $this->hasmany(TipoActivo::class);
     }

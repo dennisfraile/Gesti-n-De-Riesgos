@@ -8,9 +8,17 @@ class TipoActivo extends Model
 {
     //
     protected $table = 'tipoactivo';
+
     protected $primparykey = 'idtipoactivo';
-    protected $fillable = ['idtipoactivo', 'nombretipoactivo', 'descriptipoactivo'];
+
     public $timestamps =false;
+
+
+    protected $fillable = [ 
+    	'nombretipoactivo', 
+    	'descriptipoactivo'
+    ];
+    
     public function activo(){
     	return $this->belongsto(Activo::class);
     }

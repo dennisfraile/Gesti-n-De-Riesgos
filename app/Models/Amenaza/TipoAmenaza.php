@@ -8,9 +8,17 @@ class TipoAmenaza extends Model
 {
     //
     protected $table = 'tipoamenaza';
+
     protected $primparykey = 'idtipoamenaza';
-    protected $fillable = ['idtipoamenaza', 'nombretipoame', 'descriptipoame'];
+
     public $timestamps =false;
+
+
+    protected $fillable = [ 
+    	'nombretipoame', 
+    	'descriptipoame'
+    ];
+    
     public function amenaza(){
     	return $this->belongsto(Amenaza::class);
     }

@@ -8,10 +8,19 @@ class Procedimiento extends Model
 {
     //
     protected $table = 'procedimiento';
+
     protected $primparykey = 'idprocedimiento';
-    protected $fillable = ['idprocedimiento', 'nombreproced', 'descripproced',
-     'idctrl'];
+
     public $timestamps =false;
+
+
+    protected $fillable = [
+        'idcontrol', 
+        'nombreproced', 
+        'descripproced'
+    ];
+
+    
     public function control(){
         return $this->belongsto(Control::class);
     }

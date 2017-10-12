@@ -8,10 +8,20 @@ class Paso extends Model
 {
     //
     protected $table = 'paso';
+
     protected $primparykey = 'idpaso';
-    protected $fillable = ['idpaso', 'nombrepaso', 'descripaso','realizado',
-    'correlativo', 'idproc'];
+
     public $timestamps =false;
+
+
+    protected $fillable = [
+    	'idprocedimiento',
+    	'correlativo', 
+    	'nombrepaso', 
+    	'descripaso',
+    	'realizado'
+    ];
+    
     public function procedimiento(){
         return $this->belongsto(Procedimiento::class);
     }

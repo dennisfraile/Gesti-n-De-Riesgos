@@ -8,9 +8,18 @@ class TratamientoRiesgo extends Model
 {
     //
     protected $table = 'tratamientoriesgo';
+
     protected $primparykey = 'idtratamiento';
-    protected $fillable = ['idtratamiento', 'descriptratamiento', 'nombretratamiento', 'id','idact'];
+
     public $timestamps =false;
+
+    protected $fillable = [
+        'idactivo',
+        'idtipotratamiento',
+        'nombretratamiento',
+        'descriptratamiento'
+    ];
+    
     public function tipotratamiento(){
     	return $this->hasmany(TipoTratamiento::class);
     }
