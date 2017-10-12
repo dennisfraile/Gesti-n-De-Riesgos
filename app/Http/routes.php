@@ -17,7 +17,6 @@ Route::get('/', function () {
 
 Route::group(['middleware'=>['web']], function ()
 {
-<<<<<<< HEAD
 	route::get('Informacion', 'ImformacionE\InformacionController@informacion');
     route::resource('tratamiento_riesgos','TratamientoRiesgo\TratamientoRiesgoController');
     route::resource('tipo_tratamientos','TratamientoRiesgo\TipoTratamientoRiesgoController');
