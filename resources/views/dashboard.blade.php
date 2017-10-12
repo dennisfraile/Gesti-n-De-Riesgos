@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.admin')
 
 
 @section('title','Sistema de Gestion de Riesgo de Activos')
