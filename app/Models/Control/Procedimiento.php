@@ -13,9 +13,9 @@ class Procedimiento extends Model
      'idctrl'];
     public $timestamps =false;
     public function control(){
-        return $this->hasmany(Control::class);
+        return $this->belongsto(Control::class);
     }
     public function Paso(){
-        return $this->belognsto(Paso::class);
+        return $this->hasmany(Paso::class);
     }
 }

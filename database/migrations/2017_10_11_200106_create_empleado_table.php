@@ -19,10 +19,10 @@ class CreateEmpleadoTable extends Migration
             $table->string('apellido',30);
             $table->string('email',30);
             $table->string('foto',25);
-            $table->integer('id_empresa')->unsigned();
-            $table->foreign('idd_empresa')->references('idempresa')->on('empresa');
-            $table->integer('id_rol')->unsigned();
-            $table->foreign('idd_rol')->references('idrol')->on('rol');
+            $table->integer('idempr')->unsigned();
+            $table->foreign('idempr')->references('idempresa')->on('empresa');
+            $table->integer('idrl')->unsigned();
+            $table->foreign('idrl')->references('idrol')->on('rol');
             });
     }
 

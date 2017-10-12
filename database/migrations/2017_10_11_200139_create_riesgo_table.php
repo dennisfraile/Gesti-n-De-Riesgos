@@ -18,10 +18,10 @@ class CreateRiesgoTable extends Migration
             $table->string('descripriesgo',300);
             $table->decimal('estimacion',5,2);
             $table->string('impacto',200);
-            $table->integer('id_activo')->unsigned();
-            $table->foreign('idd_activo')->references('idactivo')->on('activo');
-            $table->integer('id_vulnerabilidad')->unsigned();
-            $table->foreign('idd_vulnerabilidad')->references('idvulnerabilidad')->on('vulnerabilidad');
+            $table->integer('idact')->unsigned();
+            $table->foreign('idact')->references('idactivo')->on('activo');
+            $table->integer('idvul')->unsigned();
+            $table->foreign('idvul')->references('idvulnerabilidad')->on('vulnerabilidad');
             });
     }
 

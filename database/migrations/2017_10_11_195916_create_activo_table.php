@@ -17,10 +17,10 @@ class CreateActivoTable extends Migration
             $table->increments('idactivo');
             $table->string('nombreactivo',30);
             $table->string('descripactivo',200);
-            $table->integer('id_ta')->unsigned();
-            $table->foreign('id_ta')->references('idtipoactivo')->on('tipoactivo');
-            $table->integer('id_em')->unsigned();
-            $table->foreign('id_em')->references('idempresa')->on('empresa');
+            $table->integer('idta')->unsigned();
+            $table->foreign('idta')->references('idtipoactivo')->on('tipoactivo');
+            $table->integer('idem')->unsigned();
+            $table->foreign('idem')->references('idempresa')->on('empresa');
         });
     }
 

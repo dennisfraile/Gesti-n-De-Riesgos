@@ -17,8 +17,8 @@ class CreateAmenazaTable extends Migration
             $table->increments('idamenaza');
             $table->string('nombreamenza',25);
             $table->string('descripamenaza',50);
-            $table->integer('id_tipo_amenaza')->unsigned();
-            $table->foreign('id_tipo_amenaza')->references('idtipoamenaza')->on('tipoamenaza');
+            $table->integer('idtamz')->unsigned();
+            $table->foreign('idtamz')->references('idtipoamenaza')->on('tipoamenaza');
             });
     }
 

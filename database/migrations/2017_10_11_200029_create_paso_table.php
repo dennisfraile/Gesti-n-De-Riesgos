@@ -18,6 +18,9 @@ class CreatePasoTable extends Migration
             $table->decimal('correlativo',5,2);
             $table->string('descripaso',100);
             $table->boolean('realizado',true);
+            $table->integer('idproc')->unsigned();
+            $table->foreign('idproc')->references('idprocedimiento')->on('procedimiento');
+            
             });
     }
 

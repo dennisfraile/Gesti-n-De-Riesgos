@@ -10,7 +10,7 @@ class Activo extends Model
     protected $table = 'activo';
     protected $primparykey = 'idactivo';
     protected $fillable = ['idtactivo', 'nombreactivo', 'descripactivo', 
-    'idta','idem','idtr'];
+    'idta','idem'];
     public $timestamps =false;
     public function tipoactivo(){
     	return $this->hasmany(TipoActivo::class);

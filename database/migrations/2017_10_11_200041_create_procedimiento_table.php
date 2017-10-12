@@ -17,8 +17,8 @@ class CreateProcedimientoTable extends Migration
             $table->increments('idprocedimiento');
             $table->string('nombreproced',30);
             $table->string('descripproced',50);
-            $table->integer('id_control')->unsigned();
-            $table->foreign('idd_control')->references('idcontrol')->on('control');
+            $table->integer('idctrl')->unsigned();
+            $table->foreign('idctrl')->references('idcontrol')->on('control');
             });
     }
 

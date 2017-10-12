@@ -12,7 +12,7 @@ class Paso extends Model
     protected $fillable = ['idpaso', 'nombrepaso', 'descripaso','realizado',
     'correlativo', 'idproc'];
     public $timestamps =false;
-    public function paso(){
-        return $this->belongsto(Paso::class);
+    public function procedimiento(){
+        return $this->belongsto(Procedimiento::class);
     }
 }

@@ -21,8 +21,8 @@ class CreateControlTable extends Migration
             $table->string('fechainicio',10);
             $table->string('fechafin',10);
             $table->double('presupouesto',10);
-            $table->integer('id_tratamiento')->unsigned();
-            $table->foreign('idd_tratramiento')->references('idtratatamiento')->on('tratamientoriesgo');
+            $table->integer('idtrat')->unsigned();
+            $table->foreign('idtrat')->references('idtratatamiento')->on('tratamientoriesgo');
             });
     }
 

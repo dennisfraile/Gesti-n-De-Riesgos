@@ -10,10 +10,10 @@ class Empleado extends Model
     protected $table = 'empleado';
     protected $primparykey = 'idempleado';
     protected $fillable = ['idempleado', 'nombreempleado', 'apellido', 'email'
-    ,'foto','idemp'];
+    ,'foto','idempr','idrl'];
     public $timestamps =false;
     public function Rol(){
-        return $this->hasmany(Rol::class);
+        return $this->belongsto(Rol::class);
     }
     public function Empresa(){
         return $this->belongsto(Empresa::class);
