@@ -10,7 +10,7 @@ class Paso extends Model
     protected $table = 'paso';
     protected $primparykey = 'idpaso';
     protected $fillable = ['idpaso', 'nombrepaso', 'descripaso','realizado',
-    'correlativo', 'idproceso'];
+    'correlativo', 'idproc'];
     public $timestamps =false;
     public function paso(){
         return $this->belongsto(Paso::class);

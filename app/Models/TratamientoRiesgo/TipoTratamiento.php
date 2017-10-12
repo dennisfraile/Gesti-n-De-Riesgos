@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class TipoTratamiento extends Model
 {
     //
-    protected $table = 'tipo_tratamiento';
+    protected $table = 'tipotratamiento';
     protected $primarykey = 'idtipotratamiento';
     protected $fillable = ['idtipotratamiento', 'nombretipotrata', 'descriptipotrata'];
        public $timestamps=false;
-    public function tratamiento(){
+    public function tratamientoriesgo(){
 
-       	return $this->belongsto(Tratamiento::class);
+       	return $this->belongsto(TratamientoRiesgo::class);
        }
       
 

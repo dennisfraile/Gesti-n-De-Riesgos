@@ -10,7 +10,7 @@ class Procedimiento extends Model
     protected $table = 'procedimiento';
     protected $primparykey = 'idprocedimiento';
     protected $fillable = ['idprocedimiento', 'nombreproced', 'descripproced',
-     'idcontrol'];
+     'idctrl'];
     public $timestamps =false;
     public function control(){
         return $this->hasmany(Control::class);

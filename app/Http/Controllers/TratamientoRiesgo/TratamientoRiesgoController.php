@@ -19,12 +19,12 @@ class TratamientoRiesgoController extends Controller
     public function index()
     {
         //
-        $tratamientoriesgo = TratamientoRiesgo::select('tratamientoriesgo.idtratamiento',
+        $tratamientoriesgos = TratamientoRiesgo::select('tratamientoriesgo.idtratamiento',
         'tratamientoriesgo.nombretratamiento as tratamientoriesgo','tratamientoriesgo.descriptratamiento as tratamientoriesgo',
         'tipotratamiento.nombretipotrata as tipotratamiento')
         ->join('tipotratamiento','tipotratamiento.idtipotratamiento','=','tratamientoriesgo.id')
         ->get();
-        return View('tratamiento_riesgo/tratamiento_riesgo')->with('tratamiento_riesgos',$tratamientoriesgo);
+        return View('tratamientoriesgo/tratamientoriesgo')->with('tratamientoriesgos',$tratamientoriesgos);
         
     }
 
@@ -36,6 +36,8 @@ class TratamientoRiesgoController extends Controller
     public function create()
     {
         //
+        $tipotratamiento = TipoTratamiento::plists('nombretipotrata','idtipotratamiento')->prepend('Seleccioname el Tipo de Tratamiento');
+        return View('tratamientoriesgo.create')->with('tipotratamiento',$tipotratamiento);
     }
 
     /**
@@ -47,6 +49,9 @@ class TratamientoRiesgoController extends Controller
     public function store(Request $request)
     {
         //
+        TratamientoRiesgo::create($request->all());   
+       // Session::flash('save','Se ha creado correctamente'); 
+        return redirect()->route('tratamientoriesgo.tratamientoriesgo');
     }
 
     /**

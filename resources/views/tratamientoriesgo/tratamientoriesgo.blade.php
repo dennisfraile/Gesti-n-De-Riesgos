@@ -34,22 +34,20 @@
                   <th>Acción</th>
                </thead>
                <tbody>
-               @foreach($tratamientoriesgo as $tratamientoriesgo)
+               @foreach($tratamientoriesgos as $tratamientoriesgo)
                   <tr>
                      <td>{{$tratamientoriesgo->nombretratamiento}}</td>
                      <td>{{$tratamientoriesgo->descriptratamiento}}</td>
                      <td>{{$tratamientoriesgo->id}}</td>
-                     <td><a href="{{route('tratamiento_riesgo.edit',$tratamiento->idtratamiento)}}">[Editar]</a> 
-                     <a href="{{route('tratamiento_riesgo.show',$tratamiento->idtratamiento)}}">[Eliminar]</a></td>
+                     <td><a href="{{route('tratamientoriesgo.edit',$tratamientoriesgo->idtratamiento)}}">[Editar]</a> 
+                     <a href="{{route('tratamientoriesgo.show',$tratamientorisego->idtratamiento)}}">[Eliminar]</a></td>
                   </tr>
                @endforeach
                </tbody>
 
 
              </table>
-           <div class='text-center'>
-              {!!$tratamiento->links()!!}
-           </div>
+         
 
           </div>
         </div>
@@ -61,7 +59,7 @@
 <script>
   $("#nuevo").click(function(event)
   {
-      document.location.href = "{{ route('tratamiento_riesgo.create')}}";
+      document.location.href = "{{ route('tratamientoriesgo.create')}}";
   });
 </script>
   

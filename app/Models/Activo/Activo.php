@@ -10,7 +10,7 @@ class Activo extends Model
     protected $table = 'activo';
     protected $primparykey = 'idactivo';
     protected $fillable = ['idtactivo', 'nombreactivo', 'descripactivo', 
-    'idtipoactivo','idempresa'];
+    'idta','idem','idtr'];
     public $timestamps =false;
     public function tipoactivo(){
     	return $this->hasmany(TipoActivo::class);
@@ -18,11 +18,11 @@ class Activo extends Model
     public function empresa(){
         return $this->belongsto(Empresa::class);
     }
-    public function tratamientos(){
-        return $this->hasmany(TratamientoActivo::class);
+    public function tratamientoriesgo(){
+        return $this->belongsto(TratamientoRiesgo::class);
     }
     public function riesgos(){
-        return $this->hasmany(Riesgo::class);
+        return $this->belongsto(Riesgo::class);
     }
 
 }

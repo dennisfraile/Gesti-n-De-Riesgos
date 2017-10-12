@@ -16,9 +16,11 @@ class CreateTratamientoTable extends Migration
         Schema::create('tratamientoriesgo',function(Blueprint $table){
             $table->increments('idtratamiento');
             $table->string('nombretratamiento',30);
-            $table->string('descriptratamiento',30);
+            $table->string('descriptratamiento',200);
             $table->integer('id')->unsigned();
             $table->foreign('id')->references('idtipotratamiento')->on('tipotratamiento');
+            $table->integer('idact')->unsigned();
+            $table->foreign('idact')->references('idactivo')->on('activo');
         });
 
     }
