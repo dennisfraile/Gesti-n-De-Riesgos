@@ -27,8 +27,8 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Principal</a></li>
-            <li><a href="tratamiento_riesgos">Tratamiento de Riesgos</a></li>
-            <li><a href="tipo_tratamientos">Tipos de Tratamiento</a></li>
+            <li><a href="tratamientoriesgo">Tratamiento de Riesgos</a></li>
+            <li><a href="tipotratamiento">Tipos de Tratamiento</a></li>
           </ul>
 
         </div><!--/.nav-collapse -->

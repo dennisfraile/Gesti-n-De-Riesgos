@@ -18,6 +18,7 @@ class TipoTratamientoRiesgoController extends Controller
     {
         //
         //return 'hola2';
+        
     }
 
     /**

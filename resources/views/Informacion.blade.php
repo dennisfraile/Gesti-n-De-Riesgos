@@ -38,11 +38,8 @@
 						<br>
 						<label class="control-label col-sm-4 text-primary" for="NomE">Objetivos</label>
       					<div class="col-sm-10">
-        					<textarea rows="2" col="50" class="form-control" id="objGe" name="ObjetivoGeneral"></textarea>
-<<<<<<< HEAD
+        					<textarea rows="2" col="50" class="form-control" id="objGe" name="Objetivo"></textarea>
       					</div>
-=======
->>>>>>> 9ad6dced3c22d366b02661d1c8f65f4f99046ef4
       					<br>
       					<div class="col-sm-10">
       						<button type="button" class="btn btn-outline-primary">Guardar</button>
