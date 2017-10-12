@@ -6,7 +6,7 @@
 
    <ol class="breadcrumb">
      <li>Panel de Control</li>
-     <li class="active">Escritorio</li>
+    <!-- <li class="active">Escritorio</li>-->
    </ol>
 
    <!-- Main component for a primary marketing message or call to action -->
