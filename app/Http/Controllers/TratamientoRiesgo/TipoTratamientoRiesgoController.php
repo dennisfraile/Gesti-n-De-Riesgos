@@ -17,7 +17,8 @@ class TipoTratamientoRiesgoController extends Controller
     public function index()
     {
         //
-        return 'hola2';
+        //return 'hola2';
+        
     }
 
     /**

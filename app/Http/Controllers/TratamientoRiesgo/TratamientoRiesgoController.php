@@ -4,6 +4,8 @@ namespace App\Http\Controllers\TratamientoRiesgo;
 
 use Illuminate\Http\Request;
 use App\Models\TratamientoRiesgo\TratamientoRiesgo;
+use App\Models\TratamientoRiesgo\TipoTratamiento;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -17,8 +19,12 @@ class TratamientoRiesgoController extends Controller
     public function index()
     {
         //
-        //$tratamiento_riesgos = TratamientoRiesgo::select(all);
-        return 'hola';//view('tratamiento', $tratamientos);
+        $tratamientoriesgos = TratamientoRiesgo::select('tratamientoriesgo.idtratamiento',
+        'tratamientoriesgo.nombretratamiento as tratamientoriesgo','tratamientoriesgo.descriptratamiento as tratamientoriesgo',
+        'tipotratamiento.nombretipotrata as tipotratamiento')
+        ->join('tipotratamiento','tipotratamiento.idtipotratamiento','=','tratamientoriesgo.id')
+        ->get();
+        return View('tratamientoriesgo/tratamientoriesgo')->with('tratamientoriesgos',$tratamientoriesgos);
         
     }
 
@@ -30,6 +36,8 @@ class TratamientoRiesgoController extends Controller
     public function create()
     {
         //
+        $tipotratamiento = TipoTratamiento::plists('nombretipotrata','idtipotratamiento')->prepend('Seleccioname el Tipo de Tratamiento');
+        return View('tratamientoriesgo.create')->with('tipotratamiento',$tipotratamiento);
     }
 
     /**
@@ -41,6 +49,9 @@ class TratamientoRiesgoController extends Controller
     public function store(Request $request)
     {
         //
+        TratamientoRiesgo::create($request->all());   
+       // Session::flash('save','Se ha creado correctamente'); 
+        return redirect()->route('tratamientoriesgo.tratamientoriesgo');
     }
 
     /**

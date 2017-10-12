@@ -7,11 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class TratamientoRiesgo extends Model
 {
     //
-    protected $table = 'tratamientos_riesgos';
-    protected $primparykey = 'id';
-    protected $fillable = ['id', 'description', 'actives_id', 'controls_id'];
+    protected $table = 'tratamientoriesgo';
+    protected $primparykey = 'idtratamiento';
+    protected $fillable = ['idtratamiento', 'descriptratamiento', 'nombretratamiento', 'id','idact'];
     public $timestamps =false;
-    public function tipos_tratamientos(){
+    public function tipotratamiento(){
     	return $this->hasmany(TipoTratamiento::class);
     }
+    public function activo(){
+        return $this->hasmany(Activo::class);
+    }
+   
 }

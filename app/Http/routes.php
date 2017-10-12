@@ -12,13 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 Route::group(['middleware'=>['web']], function ()
 {
 
-    route::resource('tratamiento_riesgos','TratamientoRiesgo\TratamientoRiesgoController');
-    route::resource('tipo_tratamientos','TratamientoRiesgo\TipoTratamientoRiesgoController');
-    route::get('dashboard','Desktop\DashboardController@index');
+    route::resource('tratamientoriesgo','TratamientoRiesgo\TratamientoRiesgoController');
+    route::resource('tipotratamiento','TratamientoRiesgo\TipoTratamientoRiesgoController');
+    route::get('dashboard','Principal\DashboardController@index');
 
 });
