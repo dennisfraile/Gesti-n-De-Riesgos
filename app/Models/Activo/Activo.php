@@ -9,7 +9,7 @@ class Activo extends Model
     //
     protected $table = 'activo';
     protected $primparykey = 'idactivo';
-    protected $fillable = ['idtactivo', 'nombreactivo', 'descripactivo', 
+    protected $fillable = ['idactivo', 'nombreactivo', 'descripactivo', 
     'idta','idem'];
     public $timestamps =false;
     public function tipoactivo(){

@@ -19,8 +19,8 @@ class CreateTratamientoTable extends Migration
             $table->string('descriptratamiento',200);
             $table->integer('id')->unsigned();
             $table->foreign('id')->references('idtipotratamiento')->on('tipotratamiento');
-            $table->integer('idact')->unsigned();
-            $table->foreign('idact')->references('idactivo')->on('activo');
+            $table->integer('idct')->unsigned();
+            $table->foreign('idct')->references('idactivo')->on('activo');
         });
 
     }
