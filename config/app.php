@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'America/El_Salvador',
 
     /*
     |--------------------------------------------------------------------------
@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -152,10 +152,10 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        GestionDeRiesgos\Providers\AppServiceProvider::class,
+        GestionDeRiesgos\Providers\AuthServiceProvider::class,
+        GestionDeRiesgos\Providers\EventServiceProvider::class,
+        GestionDeRiesgos\Providers\RouteServiceProvider::class,
 
     ],
 
