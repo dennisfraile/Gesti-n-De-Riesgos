@@ -10,6 +10,6 @@ use GestionDeRiesgos\Http\Controllers\Controller;
 class InformacionController extends Controller
 {
     public function informacion(){
-    	return view('Informacion');
+    	return view('\Informacion');
     }
 }
