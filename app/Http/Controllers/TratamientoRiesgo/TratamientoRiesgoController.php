@@ -62,6 +62,8 @@ class TratamientoRiesgoController extends Controller
     public function show($id)
     {
         //
+        $tratamientoriesgos = TratamientoRiesgo::FindOrFail($id);
+        return view('product.show')->with('products',$tratamientoriesgos);
     }
 
     /**
@@ -89,7 +91,7 @@ class TratamientoRiesgoController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $tratamientoriesgos = TratamientoRiesgo::FindOrFail($idtratamiento);
+        $tratamientoriesgos = TratamientoRiesgo::FindOrFail($id);
         $input = $request->all();
         $tratamientoriesgos->fill($input)->save();
         
@@ -105,7 +107,7 @@ class TratamientoRiesgoController extends Controller
     public function destroy($id)
     {
         //
-        $tratamientoriesgos = TratamientoRiesgo::FindOrFail($idtratamiento);
+        $tratamientoriesgos = TratamientoRiesgo::FindOrFail($id);
         $tratamientoriesgos->delete();
         
         return redirect()->route('tratamientoriesgo.tratamientoriesgo');

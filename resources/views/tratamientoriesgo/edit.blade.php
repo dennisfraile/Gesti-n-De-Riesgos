@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 
-@section('title','Editar Producto')
+@section('title','Editar Tratamiento')
 
-@section('content')
+@section('contenido')
 
 <ol class="breadcrumb">
-     <li><a href="{{url('dashboard')}}">Escritorio</a></li>
+     <li><a href="{{url('dashboard')}}">Principal</a></li>
      <li><a href="{{url('tratamientoriesgo')}}"> Tratamientos</a></li>
      <li class="active">Editar Tratamiento</li>
    </ol>
@@ -56,3 +56,4 @@
       document.location.href = "{{ route('tratamientoriesgo.tratamientoriesgo')}}";
   });
 </script>
+@stop
