@@ -18,8 +18,6 @@ Route::get('/', function () {
 Route::group(['middleware'=>['web']], function ()
 {
 	route::get('Informacion', 'ImformacionE\InformacionController@informacion');
-    route::resource('tratamiento_riesgos','TratamientoRiesgo\TratamientoRiesgoController');
-    route::resource('tipo_tratamientos','TratamientoRiesgo\TipoTratamientoRiesgoController');
     route::resource('tratamientoriesgo','TratamientoRiesgo\TratamientoRiesgoController');
     route::resource('tipotratamiento','TratamientoRiesgo\TipoTratamientoRiesgoController');
     route::get('dashboard','Principal\DashboardController@index');

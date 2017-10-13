@@ -18,11 +18,7 @@
      <h1>Estadistica <small>Visitas activas</small></h1>
    </div>-->
 
-   <div class="row">
-     <div class="col-md-8">
-        <img src="img/estadistica.png" alt="" />
-     </div>
-   </div>
+  
 
 
 
