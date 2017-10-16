@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\TratamientoRiesgo;
 
 use Illuminate\Http\Request;
-use App\Models\TratamientoRiesgo\TratamientoRiesgo;
-use App\Models\TratamientoRiesgo\TipoTratamiento;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use \App\Models\TratamientoRiesgo\TratamientoRiesgo;
+use \App\Models\TratamientoRiesgo\TipoTratamiento;
 
 class TratamientoRiesgoController extends Controller
 {
@@ -63,6 +62,8 @@ class TratamientoRiesgoController extends Controller
     public function show($id)
     {
         //
+        $tratamientoriesgos = TratamientoRiesgo::FindOrFail($id);
+        return view('product.show')->with('products',$tratamientoriesgos);
     }
 
     /**
@@ -74,6 +75,10 @@ class TratamientoRiesgoController extends Controller
     public function edit($id)
     {
         //
+        $tipotratamiento = TipoTratamiento::lists('nombretipotrata','idtipotratamiento')->prepend('Seleccioname el tipo
+        de tratamiento');
+        $tratamientoriesgos = TratamientoRIesgo::FindOrFail($id);
+        return view('tipotratamiento.edit', array('tratamientoriesgos'=>$tratamientoriesgoss,'tipotratamientos'=>$tipotratamiento));
     }
 
     /**
@@ -86,6 +91,11 @@ class TratamientoRiesgoController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $tratamientoriesgos = TratamientoRiesgo::FindOrFail($id);
+        $input = $request->all();
+        $tratamientoriesgos->fill($input)->save();
+        
+        return redirect()->route('tratamientoriesgo.tratamientoriesgo');
     }
 
     /**
@@ -97,5 +107,9 @@ class TratamientoRiesgoController extends Controller
     public function destroy($id)
     {
         //
+        $tratamientoriesgos = TratamientoRiesgo::FindOrFail($id);
+        $tratamientoriesgos->delete();
+        
+        return redirect()->route('tratamientoriesgo.tratamientoriesgo');
     }
 }

@@ -1,8 +1,8 @@
-@extends('layouts.master')
+@extends('layouts.admin')
 
 @section('title','Lista de Tratamientos')
 
-@section('content')
+@section('contenido')
 
    <!-- Main component for a primary marketing message or call to action -->
    
@@ -63,4 +63,4 @@
   });
 </script>
   
-@endsection
+@stop

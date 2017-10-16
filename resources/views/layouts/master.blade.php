@@ -8,7 +8,10 @@
     <title>Sistema de Gestion de Riesgos::@yield('title')::</title>
 
     <!-- Bootstrap -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    {!!Html::style('css/bootstrap.min.css')!!}
+    {!!Html::style('css/navbar-fixed-top.css')!!}
+    {!!Html::script('js/bootstrap.min.js')!!}
     
   </head>
   <body>
@@ -16,19 +19,19 @@
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </button>-->
+          </button>
           <a class="navbar-brand" href="#"> <img src="img/logo.png" alt=""/> </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Principal</a></li>
-            <li><a href="tratamientoriesgo">Tratamiento de Riesgos</a></li>
-            <li><a href="tipotratamiento">Tipos de Tratamiento</a></li>
+            <li><a href="{{url('dashboard')}}">Principal</a></li>
+            <li><a href="{{url('tratamientoriesgo')}}">Tratamiento de Riesgos</a></li>
+            <li><a href="{{url('tipotratamiento')}}">Tipos de Tratamiento</a></li>
           </ul>
 
         </div><!--/.nav-collapse -->
@@ -38,7 +41,7 @@
 
 
     <div class="container">
-      @yield('content')
+      @yield('contenido')
 
 
     </div> <!-- /container -->

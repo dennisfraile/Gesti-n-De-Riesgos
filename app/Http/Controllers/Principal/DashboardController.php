@@ -1,16 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Principal;
+namespace GestionDeRiesgos\Http\Controllers\Principal;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use GestionDeRiesgos\Http\Requests;
+use GestionDeRiesgos\Http\Controllers\Controller;
 
 class DashboardController extends Controller
 {
     //
-   public function index(){
+
+    public function index(){
         return view('dashboard');
     }
         public function modelweb()
@@ -18,6 +19,4 @@ class DashboardController extends Controller
             # code...
             return view('modelweb');
         }
-    
 }
-

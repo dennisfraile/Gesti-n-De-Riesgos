@@ -1,8 +1,8 @@
-@extends('layouts.master')
+@extends('layouts.admin')
 
 @section('title','Tratamiento Nuevo')
 
-@section('content')
+@section('contenido')
 <!-- Main component for a primary marketing message or call to action -->
    <ol class="breadcrumb">
      <li><a href="{{url('dashboard')}}">Principal</a></li>
