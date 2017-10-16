@@ -18,6 +18,9 @@
     <link rel="apple-touch-icon" href="{{asset('img/apple-touch-icon.png')}}">
     <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
 
+    <!-- Estilo de calendarios -->
+    <link rel="stylesheet" href="{{asset('css/tcal.css')}}"></script>
+
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
@@ -87,35 +90,48 @@
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-laptop"></i>
-                <span>CRUD 1</span>
+                <span>Empresa</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> Item-1</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Item-2</a></li>
+                <li><a href="{{url('/empresa/create')}}"><i class="fa fa-circle-o"></i> Agregar Empresa</a></li>
+                <li><a href="{{url('/empresa')}}"><i class="fa fa-circle-o"></i> Visualizar Empresa</a></li>
               </ul>
             </li>
-            
-            <li class="treeview">
-              <a href="#">
-                 <i class="fa fa-th"></i>
-                  <span>CRUD 2</span>
-                 <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> Item-1</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Item-2</a></li>
-              </ul>
-            </li>
+
             <li class="treeview">
               <a href="#">
                <i class="fa fa-bar-chart "></i>
-                <span>CRUD 3</span>
+                <span>Control de Riesgos</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> Item-1</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Item-2</a></li>
+                <li><a href="{{url('control/create')}}"><i class="fa fa-circle-o"></i> Nuevo Control</a></li>
+                <li><a href="{{url('control')}}"> <i class="fa fa-circle-o"></i> Gestionar Control</a></li>
+              </ul>
+            </li>
+
+            <li class="treeview">
+              <a href="#">
+                 <i class="fa fa-th"></i>
+                  <span>Activos</span>
+                 <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{url('activo/create')}}"><i class="fa fa-circle-o"></i> Nuevo Activo</a></li>
+                <li><a href="{{url('activo')}}"><i class="fa fa-circle-o"></i> Gestionar Activo</a></li>
+              </ul>
+            </li>
+
+            <li class="treeview">
+              <a href="#">
+                 <i class="fa fa-th"></i>
+                  <span>Vulnerabilidades</span>
+                 <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{url('vulnerabilidad/create')}}"><i class="fa fa-circle-o"></i> Nueva Vulnerabilidad</a></li>
+                <li><a href="{{url('vulnerabilidad')}}"><i class="fa fa-circle-o"></i> Gestionar Vulneravilidad</a></li>
               </ul>
             </li>
                        
@@ -203,6 +219,9 @@
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <!-- AdminLTE App -->
     <script src="{{asset('js/app.min.js')}}"></script>
+
+    <!-- Calendario -->
+    <script type="text/javascript" src="{{asset('js/tcal.js')}}"></script>
     
   </body>
 </html>
