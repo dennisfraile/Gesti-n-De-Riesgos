@@ -24,7 +24,7 @@ class TipoTratamientoRiesgoControlles extends Controller
             ->select('tt.idtipotratamiento','tt.nombretipotrata','tt.descriptipotrata')
             ->get();
             return 
-            view('tt.tipoactivo', ["tipotrattamientos"=>$tipotratamientos]);
+            view("tipotratamiento.index", ["tipotratamientos"=>$tipotratamientos]);
             
         }
                 
@@ -38,7 +38,7 @@ class TipoTratamientoRiesgoControlles extends Controller
     public function create()
     {
         return 
-        view("tt.create");
+        view("tipotratamiento.create");
         
     }
 
@@ -81,7 +81,7 @@ class TipoTratamientoRiesgoControlles extends Controller
     public function edit($id)
     {
         //
-        return  view("tt.edit", ["tipotratamiento"=>TipoTratamiento::findOrFail($id)]);
+        return  view("tipotratamiento.edit", ["tipotratamiento"=>TipoTratamiento::findOrFail($id)]);
 
         
     }

@@ -4,7 +4,8 @@
                 <div class="col-lg-12">
                      <ol class="breadcrumb">
                           <li>
-                              <i class="fa fa-home"></i> <a href="{{url('/activo')}}">Administrar Activos</a>
+                              <i class="fa fa-home"></i> 
+                              <a href="{{url('/tipotratamiento')}}">Administrar Activos</a>
                           </li>
                           <li class="active">
                               <i class="fa fa-desktop"></i>

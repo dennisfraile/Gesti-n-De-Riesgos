@@ -131,6 +131,8 @@
               <ul class="treeview-menu">
                 <li><a href="{{url('tratamientoriesgo/create')}}"><i class="fa fa-circle-o"></i> Nuevo Tratamiento</a></li>
                 <li><a href="{{url('tratamientoriesgo')}}"><i class="fa fa-circle-o"></i> Gestionar Tratamiento</a></li>
+                <li><a href="{{url('tipotratamiento')}}"><i class="fa fa-circle-o"></i> Gestionar Tipo de Tratamiento</a></li>
+
               </ul>
             </li>
 
