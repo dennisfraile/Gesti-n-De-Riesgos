@@ -122,6 +122,17 @@
                 <li><a href="{{url('activo')}}"><i class="fa fa-circle-o"></i> Gestionar Activo</a></li>
               </ul>
             </li>
+            <li class="treeview">
+              <a href="#">
+                 <i class="fa fa-th"></i>
+                  <span>Tratamiento de Riesgos</span>
+                 <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{url('tratamientoriesgo/create')}}"><i class="fa fa-circle-o"></i> Nuevo Tratamiento</a></li>
+                <li><a href="{{url('tratamientoriesgo')}}"><i class="fa fa-circle-o"></i> Gestionar Tratamiento</a></li>
+              </ul>
+            </li>
 
             <li class="treeview">
               <a href="#">
@@ -134,6 +145,7 @@
                 <li><a href="{{url('vulnerabilidad')}}"><i class="fa fa-circle-o"></i> Gestionar Vulneravilidad</a></li>
               </ul>
             </li>
+            
                        
             <li class="treeview">
               <a href="#">
