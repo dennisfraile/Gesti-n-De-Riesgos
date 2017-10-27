@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use GestionDeRiesgos\Http\Requests;
 use GestionDeRiesgos\Http\Controllers\Controller;
-use GestionDeRiesgos\Models\TipoTratamiento;
+use \GestionDeRiesgos\Models\TipoTratamiento;
 use Session;
 use DB;
 
@@ -81,6 +81,7 @@ class TipoTratamientoRiesgoControlles extends Controller
     public function edit($id)
     {
         //
+        $id=$tipotratamiento->idtipotratamiento;
         return  view("tipotratamiento.edit", ["tipotratamiento"=>TipoTratamiento::findOrFail($id)]);
 
         

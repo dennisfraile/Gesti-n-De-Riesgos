@@ -5,7 +5,7 @@
                      <ol class="breadcrumb">
                           <li>
                               <i class="fa fa-home"></i> 
-                              <a href="{{url('/tipotratamiento')}}">Administrar Activos</a>
+                              <a href="{{url('/tipotratamiento')}}">Administrar Tratamientos</a>
                           </li>
                           <li class="active">
                               <i class="fa fa-desktop"></i>
@@ -38,14 +38,14 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover" id="tablaperfilpuesto">
 				<thead>
-					<th>Id</th>
+					
 					<th>Nombre</th>
 					<th>Descripcion</th>
 					<th>Opciones</th>
 				</thead>
                @foreach ($tipotratamientos as $tipotratamiento)
 				<tr>
-					<td>{{ $tipotratamiento->idtipotratamiento}}</td>
+					
 					<td>{{ $tipotratamiento->nombretipotrata}}</td>
 					<td>{{ $tipotratamiento->descriptipotrata}}</td>
 					<td>
