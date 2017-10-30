@@ -9,7 +9,7 @@ class Empleado extends Model
     //
     protected $table = 'empleado';
 
-    protected $primparykey = 'idempleado';
+    protected $primparyKey = 'idempleado';
 
     public $timestamps =false;
     

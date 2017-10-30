@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 use GestionDeRiesgos\Http\Requests;
 use GestionDeRiesgos\Http\Controllers\Controller;
-use \GestionDeRiesgos\Models\TipoTratamiento;
+use GestionDeRiesgos\Models\TipoTratamiento;
+use Illuminate\Support\Facades\Redirect;
 use Session;
 use DB;
 
@@ -20,8 +21,9 @@ class TipoTratamientoRiesgoControlles extends Controller
     {
         if($request)
         {
-            $tipotratamientos=DB::table('tipotratamiento as tt')
-            ->select('tt.idtipotratamiento','tt.nombretipotrata','tt.descriptipotrata')
+            $tipotratamientos=DB::table('tipotratamiento')
+            ->select('idtipotratamiento','nombretipotrata','descriptipotrata')
+            
             ->get();
             return 
             view("tipotratamiento.index", ["tipotratamientos"=>$tipotratamientos]);
@@ -50,14 +52,13 @@ class TipoTratamientoRiesgoControlles extends Controller
      */
     public function store(Request $request)
     {
-        $tipotratamiento=new TipoTratamiento;
-        $tipotratamiento->idtipotratamiento=$request->get('idtipotratamiento');
-        $tipotratamiento->nombretipotrata=$request->get('nombretipotrata');
-        $tipotratamiento->descriptipotrata=$request->get('descriptipotrata');
-
-        $tipotratamiento->save();
+        $tipotratamientos= new TipoTratamiento;
+        //$tipotratamiento->idtipotratamiento=$request->get('idtipotratamiento');
+        $tipotratamientos->nombretipotrata=$request->get('nombretipotrata');
+        $tipotratamientos->descriptipotrata=$request->get('descriptipotrata');
+        $tipotratamientos->save();
         
-        return Redirect::to('tipotratamiento');
+        return Redirect::to('tipotratamiento.index');
         
     }
 
@@ -70,6 +71,11 @@ class TipoTratamientoRiesgoControlles extends Controller
     public function show($id)
     {
         //
+        $tipotratamientos=DB::table('tipotratamiento')
+        ->select('nombretipotrata','descriptipotrata')
+        ->get();
+        return View("tipotratamiento.edit",["tipotratramiento"=>$tipotratamientos]);
+
     }
 
     /**
@@ -81,8 +87,8 @@ class TipoTratamientoRiesgoControlles extends Controller
     public function edit($id)
     {
         //
-        $id=$tipotratamiento->idtipotratamiento;
-        return  view("tipotratamiento.edit", ["tipotratamiento"=>TipoTratamiento::findOrFail($id)]);
+      
+        return  view("tipotratamiento.edit", ["tipotratamientos"=>TipoTratamiento::findOrFail($id)]);
 
         
     }
@@ -99,6 +105,7 @@ class TipoTratamientoRiesgoControlles extends Controller
         //
         $affectedRows = TipoTratamiento::where('idtipotratamiento','=',$id)
         ->update([
+            'idtipotratamiento'=>$request->get('idtipotratamiento'),
             'nombretipotrata'=>$request->get('nombretipotrata'),
             'descriptipotrata'=>$request->get('descriptipotrata')]
         );

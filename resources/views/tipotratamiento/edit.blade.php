@@ -4,8 +4,8 @@
 <div class="row">
    <div class="col-lg-12">
       <ol class="breadcrumb">
-         <li> <i class="fa fa-home"></i> <a href="{{url('/admin/perfilpuesto')}}"> Administrar Perfiles </a></li>
-         <li class="active"> <i class="fa fa-desktop"></i> Editar Perfil de Puesto</li>
+         <li> <i class="fa fa-home"></i> <a href="{{url('/admin/perfilpuesto')}}"> Administrar tipo de tratamiento</a></li>
+         <li class="active"> <i class="fa fa-desktop"></i> Editar informacion del tipo de tratamiento</li>
       </ol>
    </div>
 </div>
@@ -15,8 +15,7 @@
       <h3>Editar Perfil de Puesto</h3>
    </div>
 </div>
-
-{!!Form::model($tipotratamineto,['method'=>'PATCH','route'=>['tipotratamiento.update',$tipotratamiento->idtipotratamiento]])!!}
+{!!Form::model($tipotratamiento,['method'=>'PATCH','route'=>['tipotratamiento.update',$tipotratamiento->idtipotratamiento]])!!}
 {{Form::token()}}
 
 <div class="row">

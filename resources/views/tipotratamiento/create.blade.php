@@ -25,16 +25,17 @@
 
 <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-      
-
+   
          <div class="form-group">
                <label for="nombretipotrata">Nombre del Tipo de Tratamiento</label>
                <input type="text" name="nombretipotrata" required value="{{old('nombretipotrata')}}" class="form-control" placeholder="Nombre...">
+               
          </div>
 
            <div class="form-group">
                <label for="descriptipotrata">Descripcion</label>
                <input type="text" name="descriptipotrata" required value="{{old('descriptipotrata')}}" class="form-control" placeholder="Descripcion...">
+         
          </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 

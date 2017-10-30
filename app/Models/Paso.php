@@ -9,7 +9,7 @@ class Paso extends Model
     //
     protected $table = 'paso';
 
-    protected $primparykey = 'idpaso';
+    protected $primparyKey = 'idpaso';
 
     public $timestamps =false;
 
