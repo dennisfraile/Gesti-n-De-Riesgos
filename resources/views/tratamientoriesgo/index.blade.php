@@ -36,7 +36,7 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover" id="tablaperfilpuesto">
 				<thead>
-					<th>Id</th>
+					
 					<th>Nombre</th>
 					<th>Tipo</th>
 					<th>Descripcion</th>
@@ -45,13 +45,13 @@
 				</thead>
                @foreach ($tratamientos as $tratamiento)
 				<tr>
-					<td>{{ $tratamiento->idtratamiento}}</td>
+					
 					<td>{{ $tratamiento->nombretratamiento}}</td>
 					<td>{{ $tratamiento->tipotratamiento}}</td>
 					<td>{{ $tratamiento->descriptratamiento}}</td>
 					<td>{{ $tratamiento->nombreactivo}}</td>
 					<td>
-						<a href="{{URL::action('TratamientoRiesgoController@edit',$tratamiento->idtratamiento)}}"><button class="btn btn-xs btn-primary"><i class="glyphicon  glyphicon-edit"></i> Editar</button></a>
+						<a href="{{URL::action('TratamientoRiesgo\TratamientoRiesgoController@edit',$tratamiento->idtratamiento)}}"><button class="btn btn-xs btn-primary"><i class="glyphicon  glyphicon-edit"></i> Editar</button></a>
                         <a href="" data-target="#modal-delete-{{$tratamiento->idtratamiento}}" data-toggle="modal"><button class="btn btn-xs btn-danger">
                         <i class="glyphicon glyphicon-remove"></i> Eliminar</button></a>
 					</td>

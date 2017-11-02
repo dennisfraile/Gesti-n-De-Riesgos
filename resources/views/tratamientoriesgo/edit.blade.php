@@ -5,18 +5,18 @@
    <div class="col-lg-12">
       <ol class="breadcrumb">
          <li> <i class="fa fa-home"></i> <a href="{{url('/admin/perfilpuesto')}}"> Administrar Perfiles </a></li>
-         <li class="active"> <i class="fa fa-desktop"></i> Editar Perfil de Puesto</li>
+         <li class="active"> <i class="fa fa-desktop"></i> Editar Tratamiento sobre los Activos</li>
       </ol>
    </div>
 </div>
 
 <div class="row">
    <div class="col-lg-12">
-      <h3>Editar Perfil de Puesto</h3>
+      <h3>Editar Tratamiento sobre los Activos</h3>
    </div>
 </div>
 
-{!!Form::model($tratamiento,['method'=>'PATCH','route'=>['tratamientoriesgo.update',$tratamiento->idtratamiento]])!!}
+{!!Form::model($tratamientos,['method'=>'PATCH','route'=>['tratamientoriesgo.update',$tratamientos->idtratamiento]])!!}
 {{Form::token()}}
 
 <div class="row">
@@ -25,12 +25,12 @@
 
          <div class="form-group">
                <label for="nombretratamiento">Nombre Tratamiento</label>
-               <input type="text" name="nombretratamiento" required value="{{$tratamiento->nombretratamiento}}" class="form-control" placeholder="Nombre...">
+               <input type="text" name="nombretratamiento" required value="{{$tratamientos->nombretratamiento}}" class="form-control" placeholder="Nombre...">
          </div>
 
            <div class="form-group">
-               <label for="descriptratamineto">Descripcion</label>
-               <input type="text" name="descriptratamineto" required value="{{$tratamiento->descriptratamineto}}" class="form-control" placeholder="Descripcion...">
+               <label for="descriptratamiento">Descripcion</label>
+               <input type="text" name="descriptratamiento" required value="{{$tratamientos->descriptratamiento}}" class="form-control" placeholder="Descripcion...">
          </div>
 
 
@@ -38,7 +38,7 @@
                <label> Tipo de Tratamiento</label>
                <select name="idtipotratamiento" required  class="form-control">
                    @foreach ($tipotratamiento as $tt)
-                      @if ($tt->idtipotratamiento==$tratamiento->idtipotratamiento)
+                      @if ($tt->idtipotratamiento==$tratamientos->idtipotratamiento)
                          <option value="{{$tt->idtipotratamiento}}" selected>{{$tt->nombretipotrata}}</option>
                       @else
                         <option value="{{$tt->idtipotratamiento}}">{{$tt->nombretipotrata}}</option>
@@ -48,13 +48,13 @@
          </div>
 
          <div class="form-group">
-            <label> EActivo</label>
-               <select name="idempresa" required  class="form-control">
+            <label> Activo</label>
+               <select name="idactivo" required  class="form-control">
                 @foreach ($activos as $act)
-                    @if ($act->idactivo==$tratamiento->idactivo)
+                    @if ($act->idactivo==$tratamientos->idactivo)
                       <option value="{{$act->idactivo}}" selected>{{$act->nombreactivo}}</option>
                     @else
-                      <option value="{{$act->idactivo}}">{{$act->nombretipotrata}}</option>
+                      <option value="{{$act->idactivo}}">{{$act->nombreactivo}}</option>
                     @endif
                 @endforeach
             </select>     

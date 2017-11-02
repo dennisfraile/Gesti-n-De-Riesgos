@@ -49,7 +49,7 @@
 					<td>{{ $tipotratamiento->nombretipotrata}}</td>
 					<td>{{ $tipotratamiento->descriptipotrata}}</td>
 					<td>
-						<a href="{{URL::action('TipoTratamientoRiesgoControlles@edit',
+						<a href="{{URL::action('TratamientoRiesgo\TipoTratamientoRiesgoControlles@edit',
             $tipotratamiento->idtipotratamiento)}}"><button class="btn btn-xs btn-primary"><i class="glyphicon  glyphicon-edit"></i> Editar</button></a>
                         <a href="" data-target="#modal-delete-{{$tipotratamiento->idtipotratamiento}}" data-toggle="modal"><button class="btn btn-xs btn-danger">
                         <i class="glyphicon glyphicon-remove"></i> Eliminar</button></a>

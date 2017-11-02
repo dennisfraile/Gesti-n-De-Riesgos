@@ -1,6 +1,6 @@
 <div class="modal fade modal-slide-in-right" aria-hidden="true"
 role="dialog" tabindex="-1" id="modal-delete-{{$tipotratamiento->idtipotratamiento}}">
-	{{Form::Open(array('action'=>array('TipoTratamientoRiesgoControlles@destroy',$tipotratamientos->idtipotratamiento),
+	{{Form::Open(array('action'=>array('TratamientoRiesgo\TipoTratamientoRiesgoControlles@destroy',$tipotratamiento->idtipotratamiento),
 	'method'=>'delete'))}}
 	<div class="modal-dialog">
 		<div class="modal-content">

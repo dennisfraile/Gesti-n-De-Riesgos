@@ -58,7 +58,7 @@ class TipoTratamientoRiesgoControlles extends Controller
         $tipotratamientos->descriptipotrata=$request->get('descriptipotrata');
         $tipotratamientos->save();
         
-        return Redirect::to('tipotratamiento.index');
+        return Redirect::to('tipotratamiento');
         
     }
 
@@ -105,7 +105,7 @@ class TipoTratamientoRiesgoControlles extends Controller
         //
         $affectedRows = TipoTratamiento::where('idtipotratamiento','=',$id)
         ->update([
-            'idtipotratamiento'=>$request->get('idtipotratamiento'),
+            
             'nombretipotrata'=>$request->get('nombretipotrata'),
             'descriptipotrata'=>$request->get('descriptipotrata')]
         );

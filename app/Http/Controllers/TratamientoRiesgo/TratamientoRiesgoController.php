@@ -5,9 +5,11 @@ namespace GestionDeRiesgos\Http\Controllers\TratamientoRiesgo;
 use Illuminate\Http\Request;
 
 use GestionDeRiesgos\Http\Requests;
+use Illuminate\Support\Facades\Redirect;
 use GestionDeRiesgos\Http\Controllers\Controller;
 use GestionDeRiesgos\Models\TratamientoRiesgo;
 use GestionDeRiesgos\Models\TipoTratamiento;
+use GestionDeRiesgos\Models\Activo;
 use Session;
 use DB;
 class TratamientoRiesgoController extends Controller
@@ -43,7 +45,7 @@ class TratamientoRiesgoController extends Controller
     	return view("tratamientoriesgo.create",["activos"=>$activos,"tipotratamiento"=>$tipotratamiento]);
     }
 
-    public function store(TratamientoRequest $request)
+    public function store(Request $request)
     {
     	$tratamiento=new TratamientoRiesgo;
     	$tratamiento->idtipotratamiento=$request->get('idtipotratamiento');
@@ -66,20 +68,19 @@ class TratamientoRiesgoController extends Controller
 
        $activos=DB::table('activo as act')
         ->select('act.idactivo','act.nombreactivo')->get();
-
         $tipotratamiento=DB::table('tipotratamiento as tt')
         ->select('tt.idtipotratamiento','tt.nombretipotrata')->get();
-        
-        return view("tratamientoriesgo.edit",["tratamiento"=>
-        TratramientoRiesgo::findOrFail($id),"activos"=>$activos,"tipotratamiento"=>$tipotratamiento]);
+        return view("tratamientoriesgo.edit",["tratamientos"=>
+        TratamientoRiesgo::findOrFail($id),"activos"=>$activos,"tipotratamiento"=>$tipotratamiento]);
 
     }
         
-    public function update(TratamientoRequest $request,$id)
+    public function update(Request $request,$id)
     {
 
     	$affectedRows = TratamientoRiesgo::where('idtratamiento','=',$id)
-        ->update(['idtipotratamiento'=> $request->get('idtipotratamiento'),
+        ->update([
+            'idtipotratamiento'=> $request->get('idtipotratamiento'),
             'idactivo'=>$request->get('idactivo'),
             'nombretratamiento' =>$request->get('nombretratamiento'),
             'descriptratamiento' =>$request->get('descriptratamiento')]);

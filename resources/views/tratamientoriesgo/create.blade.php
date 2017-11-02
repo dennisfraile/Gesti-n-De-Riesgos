@@ -26,8 +26,8 @@
       
 
          <div class="form-group">
-               <label for="nombreatratamiento">Nombre Tratamiento</label>
-               <input type="text" name="nombretratamineto" required value="{{old('nombretratamiento')}}" class="form-control" placeholder="Nombre...">
+               <label for="nombretratamiento">Nombre Tratamiento</label>
+               <input type="text" name="nombretratamiento" required value="{{old('nombretratamiento')}}" class="form-control" placeholder="Nombre...">
          </div>
 
            <div class="form-group">
@@ -48,7 +48,7 @@
 
          <div class="form-group">
             <label> Activo</label>
-               <select name="idempresa" required  class="form-control">
+               <select name="idactivo" required  class="form-control">
                <option value="">Seleccionar el Activo...</option>
                 @foreach ($activos as $act)
                       <option value="{{$act->idactivo}}">{{$act->nombreactivo}}</option>
@@ -62,7 +62,7 @@
 
          <div class="form-group">
                <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-floppy-disk"></i> Guardar</button>
-               <a href="{{url('activo')}}" class="btn btn-danger" role="button"><i class="glyphicon glyphicon-remove-circle"></i> Cancelar</a>
+               <a href="{{url('tratamientoriesgo')}}" class="btn btn-danger" role="button"><i class="glyphicon glyphicon-remove-circle"></i> Cancelar</a>
          </div>
 
        </div>
