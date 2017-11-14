@@ -96,10 +96,5 @@ class AnalisisController extends Controller
         return Redirect::to('analisis');
 
     }
-    public function valor($request){
-        $anactivo = new Analisis;
-        $anactivo->valoractivo=$anactivo->confidencialidad+$anactivo->disponibilidad
-        +$anactivo->integridad;
-        return $anactivo->valoractivo;
-    }
+  
 }
