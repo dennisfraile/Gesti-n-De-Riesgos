@@ -25,4 +25,16 @@ class Analisis extends Model
     public function activo(){
         return $this->belongsto(Activo::class);
     }
+    public static function valor($d1,$d2,$d3){
+        $valor =$d1+$d2+$d3;
+        return $valor;
+    }
+    public static function impacto($deg,$valor){
+     $impacto=$deg*$valor;
+     return $impacto;
+    }
+    public static function riesgo($prob,$impacto){
+        $riesgo=$prob*$impacto;
+        return $riesgo;
+    }
 }
