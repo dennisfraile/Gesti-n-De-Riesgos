@@ -52,6 +52,9 @@ class AnalisisController extends Controller
         $anactivo->confidencialidad=$request->get('confidencialidad');
         $anactivo->integridad=$request->get('integridad');
         $anactivo->degradacion=$request->get('degradacion');
+        $anactivo->valoractivo=$request->get('valoractivo');
+        $anactivo->impacto=$request->get('impacto');
+        $anactivo->riesgo=$request->get('riesgo');   
         $anactivo->probocurrencia=$request->get('probocurrencia'); 
         $anactivo->save();
         
@@ -83,6 +86,10 @@ class AnalisisController extends Controller
         'confidencialidad'=>$request->get('confidencialidad'),
         'integridad'=>$request->get('integridad'),
         'degradacion'=>$request->get('degradacion'),
+        'valoractivo'=>$request->get('valoractivo'),
+        'impacto'=>$request->get('impacto'),
+        'riesgo'=>$request->get('riesgo'),
+        
         'probocurrencia'=>$request->get('probocurrencia'),
         
             ]);
