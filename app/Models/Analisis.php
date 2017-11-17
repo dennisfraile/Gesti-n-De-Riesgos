@@ -27,30 +27,30 @@ class Analisis extends Model
     }
     public static function valor($d1,$d2,$d3){
         $valor =$d1+$d2+$d3;
-        return $valor;
+        return $valoractivo;
     }
-    public static function impacto($deg,$valor){
-     $impacto=$deg*$valor;
+    public static function impacto($degradacion,$valoractivo){
+     $impacto=$degradacion*$valoractivo;
      return $impacto;
     }
-    public static function riesgo($prob,$impacto){
-        $riesgo=$prob*$impacto;
+    public static function riesgo($probabilidad,$impacto){
+        $riesgo=$probabilidad*$impacto;
         return $riesgo;
     }
-    public static function degradacion($degradacion){
-    if (($degradacion>=0)&&($degradacion<0.01)) {
-        return $deg=0.01;
+    public static function degradacion($deg){
+    if (($deg>=0)&&($deg<0.01)) {
+        return $degradacion=0.01;
     } else {
-        if (($degradacion>=0.01)&&($degradacion<0.250)) {
-            return $deg=0.25;
+        if (($deg>=0.01)&&($deg<0.250)) {
+            return $degradacion=0.25;
         } else {
-            if (($degradacion>=0.25)&&($degradacion<0.50)) {
-                return $deg=0.50;
+            if (($deg>=0.25)&&($deg<0.50)) {
+                return $degradacion=0.50;
             } else {
-                if (($degradacion>=0.50)&&($degradacion<0.75)) {
-                    return $deg = 0.75;
+                if (($deg>=0.50)&&($deg<0.75)) {
+                    return $degradacion = 0.75;
                 } else {
-                    return $deg =1;
+                    return $degradacion =1;
                 }
             }
             
@@ -60,20 +60,20 @@ class Analisis extends Model
     
     }
     
-    public static function probabilidad($probabilidad){
-        if (($probabilidad>=0)&&($probabilidad<0.01)) {
-            return $prob=0.01;
+    public static function probabilidad($prob){
+        if (($prob>=0)&&($prob<0.01)) {
+            return $probabilidad=0.01;
         } else {
-            if (($probabilidad>=0.01)&&($probabilidad<0.10)) {
-                return $prob=0.10;
+            if (($prob>=0.01)&&($prob<0.10)) {
+                return $probabilidad=0.10;
             } else {
-                if (($probabilidad>=0.10)&&($probabilidad<0.50)) {
-                    return $prob=0.50;
+                if (($prob>=0.10)&&($prob<0.50)) {
+                    return $probabilidad=0.50;
                 } else {
-                    if (($probabilidad>=0.50)&&($probabilidad<0.70)) {
-                        return $prob = 0.70;
+                    if (($prob>=0.50)&&($prob<0.70)) {
+                        return $probabilidad = 0.70;
                     } else {
-                        return $prob =1;
+                        return $probabilidad =1;
                     }
                 }
                 
