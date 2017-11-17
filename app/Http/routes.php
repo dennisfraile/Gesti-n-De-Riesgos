@@ -20,7 +20,7 @@ Route::group(['middleware'=>['web']], function ()
 	
     route::resource('tratamientoriesgo','TratamientoRiesgo\TratamientoRiesgoController');
     route::resource('tipotratamiento','TratamientoRiesgo\TipoTratamientoRiesgoControlles');
-     
+     route::get('dashboard','Principal\DashboardController@index');
     route::resource('/','HomeController');
     route::resource('vulnerabilidad','VulnerabilidadController');
     route::resource('empresa','EmpresaController');

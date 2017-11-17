@@ -113,18 +113,19 @@
 
             <li class="treeview">
               <a href="#">
-                 <i class="fa fa-th"></i>
+                 <i class="fa fa-adn"></i>
                   <span>Activos</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{url('activo/create')}}"><i class="fa fa-circle-o"></i> Nuevo Activo</a></li>
                 <li><a href="{{url('activo')}}"><i class="fa fa-circle-o"></i> Gestionar Activo</a></li>
+                <li><a href="{{url('activo')}}"><i class="fa fa-circle-o"></i> Analizar Activos</a></li>
               </ul>
             </li>
             <li class="treeview">
               <a href="#">
-                 <i class="fa fa-th"></i>
+                 <i class="fa fa-gears"></i>
                   <span>Tratamiento de Riesgos</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
@@ -138,7 +139,7 @@
 
             <li class="treeview">
               <a href="#">
-                 <i class="fa fa-th"></i>
+                 <i class="fa fa-warning"></i>
                   <span>Vulnerabilidades</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
@@ -148,6 +149,17 @@
               </ul>
             </li>
             
+            <li class="treeview">
+              <a href="#">
+                 <i class="fa fa-clipboard"></i>
+                  <span>Analisis</span>
+                 <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{url('tratamientoriesgo/create')}}"><i class="fa fa-circle-o"></i> Analizar Activos</a></li>
+                
+              </ul>
+            </li>
                        
             <li class="treeview">
               <a href="#">
