@@ -5,6 +5,7 @@ namespace GestionDeRiesgos\Http\Controllers;
 use Illuminate\Http\Request;
 
 use GestionDeRiesgos\Http\Requests;
+use GestionDeRiesgos\Models\Analisis;
 
 class GraficoController extends Controller
 {
@@ -16,6 +17,17 @@ class GraficoController extends Controller
     public function index()
     {
         //
+        $anactivos=DB::table('analisis as an')
+        ->join('activo  as a','a.idactivo','=','an.idactivo')
+        ->select('an.idactivo','a.nombreactivo','an.idanalisis'
+        ,'an.disponibilidad'
+        ,'an.confidencialidad','an.integridad',
+        'an.valoractivo','an.degradacion',
+        'an.impacto','an.probocurrencia',
+        'an.riesgo')->get();
+        
+        return view('analisis.index',["anactivos"=>$anacivos]);
+
     }
 
     /**
