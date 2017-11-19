@@ -1,23 +1,60 @@
 <?php
 class Operaciones{
-    public static function valor($dis1, $dsi2, $dis3){
-        $valor_activo = $dis1+$dsi2+$dis3;
-        return $valor_activo;
-     }
-     public static function degrado($deg){
-         switch ($deg) {
-             case 0:;
-             case 1: ;
-             case
-                
-         }
-   
- 
-     }
-     public static function impacto(){
-        
+public static function valor($d1,$d2,$d3){
+    $valor =$d1+$d2+$d3;
+    return $valoractivo;
+}
+public static function impacto($degradacion,$valoractivo){
+ $impacto=$degradacion*$valoractivo;
+ return $impacto;
+}
+public static function riesgo($probabilidad,$impacto){
+    $riesgo=$probabilidad*$impacto;
+    return $riesgo;
+}
+public static function degradacion($deg){
+if (($deg>=0)&&($deg<0.01)) {
+    return $degradacion=0.01;
+} else {
+    if (($deg>=0.01)&&($deg<0.250)) {
+        return $degradacion=0.25;
+    } else {
+        if (($deg>=0.25)&&($deg<0.50)) {
+            return $degradacion=0.50;
+        } else {
+            if (($deg>=0.50)&&($deg<0.75)) {
+                return $degradacion = 0.75;
+            } else {
+                return $degradacion =1;
             }
-            public static function riesgo(){
+        }
         
+    }
+    
+}
+
+}
+
+public static function probabilidad($prob){
+    if (($prob>=0)&&($prob<0.01)) {
+        return $probabilidad=0.01;
+    } else {
+        if (($prob>=0.01)&&($prob<0.10)) {
+            return $probabilidad=0.10;
+        } else {
+            if (($prob>=0.10)&&($prob<0.50)) {
+                return $probabilidad=0.50;
+            } else {
+                if (($prob>=0.50)&&($prob<0.70)) {
+                    return $probabilidad = 0.70;
+                } else {
+                    return $probabilidad =1;
+                }
             }
+            
+        }
+        
+    }
+    
+    }
 }
