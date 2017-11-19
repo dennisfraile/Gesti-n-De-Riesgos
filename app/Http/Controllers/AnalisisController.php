@@ -22,7 +22,7 @@ class AnalisisController extends Controller
         if ($request)
         {
            
-            $anactivos=DB::table('analisis as an')
+            $grafico=DB::table('analisis as an')
             ->join('activo  as a','a.idactivo','=','an.idactivo')
             ->select('an.idactivo','a.nombreactivo','an.idanalisis'
             ,'an.disponibilidad'
@@ -31,7 +31,7 @@ class AnalisisController extends Controller
             'an.impacto','an.probocurrencia',
             'an.riesgo')->get();
             
-            return view('analisis.index',["anactivos"=>$anacivos]);
+            return view('grafico.index',["grafico"=>$grafico]);
         }
     }
  

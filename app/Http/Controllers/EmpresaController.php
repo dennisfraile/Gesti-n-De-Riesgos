@@ -51,7 +51,7 @@ class EmpresaController extends Controller
         	->select('nombreempresa','descripempresa', 'politica','objetivo','alcance')
         	->where('idempresa','=','1')->get();
   
-    	return view("empresa.show",["empresa"=>$empresa]);
+    	return view("Empresa.show",["empresa"=>$empresa]);
     }
 
     public function edit($id)
