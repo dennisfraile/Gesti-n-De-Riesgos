@@ -13,6 +13,10 @@ role="dialog" tabindex="-1" id="modal-delete-{{$tipotratamiento->idtipotratamien
 			</div>
 			<div class="modal-body">
 				<p>¿Desea eliminar el Tipo de Tratamiento?</p>
+				<div>
+			<p>{{$tipotratamiento->nombretipotrata}}</p>
+			<p>{{$tipotratamiento->descriptipotrata}}</p>
+			</div>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
