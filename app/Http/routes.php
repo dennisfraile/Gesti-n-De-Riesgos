@@ -18,8 +18,14 @@ Route::get('/', function () {
 Route::group(['middleware'=>['web']], function ()
 {
 	Route::get('/Bienvenido', 'HomeController@index');
+
+    route::resource('tratamientoriesgo','TratamientoRiesgo\TratamientoRiesgoController');
+    route::resource('tipotratamiento','TratamientoRiesgo\TipoTratamientoRiesgoControlles'); 
+    route::resource('analisis', 'AnalisisController'); 
+    route::resource('valorar', 'ValorarActivoController');  
     route::resource('vulnerabilidad','VulnerabilidadController');
     route::resource('empresa','EmpresaController');
+    route::resource('eliminarEmpresa','eliminarEmpresaController');
     Route::resource('control','ControlRiesgoController');
     Route::resource('activo','ActivoController');
     Route::resource('empleado','EmpleadoController');
@@ -27,6 +33,7 @@ Route::group(['middleware'=>['web']], function ()
 
     Route::auth();
     Route::get('/{slug?}', 'HomeController@index');
+
 
 });
 
