@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{asset('css/AdminLTE.min.css')}}">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
-     <link rel="stylesheet" href="{{asset('css/_all-skins.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/_all-skins.min.css')}}">
     <link rel="apple-touch-icon" href="{{asset('img/apple-touch-icon.png')}}">
     <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
 
@@ -30,8 +30,7 @@
         <!-- Logo -->
         <a href="#" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><i class="fa fa-plus-square"></i>
-          </span>
+          <span class="logo-mini"><i class="fa fa-plus-square"></i></span>
           <!-- logo for regular state and mobile devices -->
           <span class="logo-lg"><i class="fa fa-exclamation-triangle"></i><b> SGR</b></span>
         </a>
@@ -66,7 +65,7 @@
                   <li class="user-footer">
                     
                     <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Cerrar</a>
+                      <a href="{{url('/logout')}}" class="btn btn-default btn-flat">Cerrar</a>
                     </div>
                   </li>
                 </ul>
@@ -96,6 +95,18 @@
               <ul class="treeview-menu">
                 <li><a href="{{url('/empresa/create')}}"><i class="fa fa-circle-o"></i> Agregar Empresa</a></li>
                 <li><a href="{{url('/empresa')}}"><i class="fa fa-circle-o"></i> Visualizar Empresa</a></li>
+              </ul>
+            </li>
+
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Empleado</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{url('/empleado/create')}}"><i class="fa fa-circle-o"></i> Agregar Empleado</a></li>
+                <li><a href="{{url('/empleado')}}"><i class="fa fa-circle-o"></i> Gestionar Empleado</a></li>
               </ul>
             </li>
 
@@ -132,6 +143,18 @@
               <ul class="treeview-menu">
                 <li><a href="{{url('vulnerabilidad/create')}}"><i class="fa fa-circle-o"></i> Nueva Vulnerabilidad</a></li>
                 <li><a href="{{url('vulnerabilidad')}}"><i class="fa fa-circle-o"></i> Gestionar Vulneravilidad</a></li>
+              </ul>
+            </li>
+
+            <li class="treeview">
+              <a href="#">
+                 <i class="fa fa-th"></i>
+                  <span>Usuarios</span>
+                 <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{url('/users/create')}}"><i class="fa fa-circle-o"></i> Nuevo Usuario</a></li>
+                <li><a href="{{url('/users')}}"><i class="fa fa-circle-o"></i> Gestionar Usuario</a></li>
               </ul>
             </li>
                        
@@ -222,6 +245,11 @@
 
     <!-- Calendario -->
     <script type="text/javascript" src="{{asset('js/tcal.js')}}"></script>
+
+    <!-- Validar -->
+    
+    <script type="text/javascript" src="{{asset('js/validarJS.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/validarJQue.js')}}"></script>
     
   </body>
 </html>

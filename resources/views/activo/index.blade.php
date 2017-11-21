@@ -1,28 +1,25 @@
 @extends ('layouts.admin')
 @section ('contenido')
 <div class="row">
-                <div class="col-lg-12">
-                     <ol class="breadcrumb">
-                          <li>
-                              <i class="fa fa-home"></i> <a href="{{url('/activo')}}">Administrar Activos</a>
-                          </li>
-                          <li class="active">
-                              <i class="fa fa-desktop"></i>
-                               Administrar Activos
-                            </li>
-                        </ol>
-                    </div>
-               
-                <!-- /.row -->
-         <div class="col-lg-12">
-               <label><a href="{{url('/activo/create')}}" class="btn btn-success btn-lg" role="button"> <i class="fa fa-plus"></i> Nuevo Activo</a></label>
-        </div>
-        <div class="col-lg-12">
-        
-        </div>
+	<div class="col-lg-12">
+		<ol class="breadcrumb">
+			<li>
+				<i class="fa fa-home"></i> <a href="{{url('/activo')}}">Administrar Activos</a>
+			</li>
+			<li class="active">
+				<i class="fa fa-desktop"></i>Administrar Activos
+			</li>
+		</ol>
+	</div>
+
+	<div class="col-lg-12">
+		<label><a href="{{url('/activo/create')}}" class="btn btn-success btn-lg" role="button"> <i class="fa fa-plus"></i> Nuevo Activo</a></label>
+	</div>
+	<div class="col-lg-12">
+
+	</div>
 </div>
-                 
-            <!-- /.row -->
+
 
 <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

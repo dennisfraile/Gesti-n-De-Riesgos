@@ -2,9 +2,8 @@
 
 namespace GestionDeRiesgos\Http\Controllers;
 
+use GestionDeRiesgos\Http\Requests;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 
 class HomeController extends Controller
 {
@@ -15,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-       //
+        $this->middleware('auth');
     }
 
     /**
@@ -25,6 +24,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('index');
+        return view('Bienvenido');
     }
 }

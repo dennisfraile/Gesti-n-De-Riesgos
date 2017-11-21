@@ -49,5 +49,13 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Foundation\Http\Middleware\Authorize::class,
         'guest' => \GestionDeRiesgos\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+
+        'adminsistema' => \GestionDeRiesgos\Http\Middleware\Admin::class,
+        'adminempresa' => \GestionDeRiesgos\Http\Middleware\Admin::class,
+        'analista' => \GestionDeRiesgos\Http\Middleware\AnalistaConsul::class,
+        'consultor' => \GestionDeRiesgos\Http\Middleware\AnalistaConsul::class,
+        'gerencia' => \GestionDeRiesgos\Http\Middleware\Gerencia::class,
+        'alltype' => \GestionDeRiesgos\Http\Middleware\AdminConsuGerenAnalis::class,
+  
     ];
 }

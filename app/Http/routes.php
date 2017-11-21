@@ -12,22 +12,91 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('auth/login');
 });
 
 Route::group(['middleware'=>['web']], function ()
 {
-	
-    route::resource('tratamiento_riesgos','TratamientoRiesgo\TratamientoRiesgoController');
-    route::resource('tipo_tratamientos','TratamientoRiesgo\TipoTratamientoRiesgoController');
-    route::resource('tratamientoriesgo','TratamientoRiesgo\TratamientoRiesgoController');
-    route::resource('tipotratamiento','TratamientoRiesgo\TipoTratamientoRiesgoController');
-    route::get('dashboard','Principal\DashboardController@index');
-
-    route::resource('/','HomeController');
+	Route::get('/Bienvenido', 'HomeController@index');
     route::resource('vulnerabilidad','VulnerabilidadController');
     route::resource('empresa','EmpresaController');
     Route::resource('control','ControlRiesgoController');
     Route::resource('activo','ActivoController');
+    Route::resource('empleado','EmpleadoController');
+    Route::resource('users','UsuarioController');
+
+    Route::auth();
+    Route::get('/{slug?}', 'HomeController@index');
+
 });
+
+/*
+Route::group(['middleware' =>  ['auth','adminsistema']], function () {
+
+    Route::get('/Bienvenido', 'HomeController@index');
+    route::resource('vulnerabilidad','VulnerabilidadController');
+    route::resource('empresa','EmpresaController');
+    Route::resource('control','ControlRiesgoController');
+    Route::resource('activo','ActivoController');
+    Route::resource('empleado','EmpleadoController');
+    Route::resource('users','UsuarioController');
+
+    Route::auth();
+
+});
+
+Route::group(['middleware' =>  ['auth','adminempresa']], function () {
+
+    Route::get('/Bienvenido', 'HomeController@index');
+    Route::get('/Bienvenido', 'HomeController@index');
+    route::resource('vulnerabilidad','VulnerabilidadController');
+    Route::resource('control','ControlRiesgoController');
+    Route::resource('activo','ActivoController');
+    Route::resource('empleado','EmpleadoController');
+    Route::resource('users','UsuarioController');
+
+    Route::auth();
+
+});
+
+Route::group(['middleware' =>  ['auth','analista']], function () {
+
+    route::resource('vulnerabilidad','VulnerabilidadController');
+    Route::resource('control','ControlRiesgoController');
+    Route::resource('activo','ActivoController');
+
+    Route::auth();
+
+});
+
+Route::group(['middleware' =>  ['auth','consultor']], function () {
+
+    route::resource('vulnerabilidad','VulnerabilidadController');
+    Route::resource('control','ControlRiesgoController');
+    Route::resource('activo','ActivoController');
+
+    Route::auth();
+
+});
+
+Route::group(['middleware' =>  ['auth','gerencia']], function () {
+
+    route::resource('empresa','EmpresaController');
+    Route::get('/Bienvenido', 'HomeController@index');
+    Route::auth();
+
+});
+
+Route::group(['middleware' =>  ['auth','alltype']], function () {
+
+    Route::get('/Bienvenido', 'HomeController@index');
+    Route::get('/{slug?}', 'HomeController@index');
+    Route::auth();
+
+
+});
+
+*/
+
+
 
