@@ -18,4 +18,7 @@ class Activo extends Model
         'nombreactivo', 
         'descripactivo'
     ];
+    public function analisis(){
+        return $this->belongsto(Analisis::class);
+    }
 }

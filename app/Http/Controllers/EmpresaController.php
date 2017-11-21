@@ -56,7 +56,7 @@ class EmpresaController extends Controller
         	->select('nombreempresa','descripempresa', 'politica','objetivo','alcance')
         	->where('idempresa','=','1')->get();
   
-    	return view("empresa.show",["empresa"=>$empresa]);
+    	return view("Empresa.show",["empresa"=>$empresa]);
     }
 
     public function edit($id)
@@ -76,5 +76,10 @@ class EmpresaController extends Controller
             'alcance'=>$request->get('alcance')]);
 
         return Redirect::to('empresa');
+    }
+
+    public function destroy($id)
+    {
+
     }
 }

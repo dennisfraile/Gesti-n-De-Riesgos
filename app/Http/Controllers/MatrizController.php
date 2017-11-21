@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\TratamientoRiesgo;
+namespace GestionDeRiesgos\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use GestionDeRiesgos\Http\Requests;
 
-class TipoTratamientoRiesgoController extends Controller
+class MatrizController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +16,6 @@ class TipoTratamientoRiesgoController extends Controller
     public function index()
     {
         //
-        //return 'hola2';
-        
     }
 
     /**

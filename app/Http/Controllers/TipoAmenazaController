@@ -1,0 +1,81 @@
+<?php
+
+namespace GestionDeRiesgos\Http\Controllers;
+use Illuminate\Http\Request;
+use GestionDeRiesgos\Http\Requests;
+use GestionDeRiesgos\Http\Requests\TipoAmenazaRequest;
+
+
+use Illuminate\Support\Facades\Redirect;
+use Session;
+use DB;
+
+class TipoAmenazaController extends Controller
+{
+	public function __construct()
+    {
+    }
+    
+    public function index(Request $request)
+    {
+        if ($request)
+        {
+           
+            $tipoamenazas=DB::table(' tipoamenaza')
+             ->orderBy('idTipoAmenaza','desc')
+             ->paginate(3)
+            return view('tipoamen.index',["tipoamenazas"=>$tipoamenazas]);
+        }
+    }
+ 
+    public function create()
+    {
+        
+    	return view("tipoamen.create");
+    }
+    
+    
+    public function store(TipoAmenazaRequest $request)
+    {
+    	$tipoamenazas=new TipoAmenaza;
+    	$tipoamenaza->idtipoame=$request->get('idtipoame');
+    	$tipoamenaza->nombretipoame=$request->get('nombretipoame');
+        $tipoamenaza->descriptipoame=$request->get('descriptipoame');
+        
+        
+        $tipoamenaza->save();
+        
+        return Redirect::to('tipoamen');
+    }
+        
+    public function show($id)
+    {
+        
+    }
+        
+    public function edit($id)
+    {   
+       
+        
+    return view("tipoamen.edit",["tipoamenazas"=>TipoAmenazas::findOrFail($id)]);
+    }
+        
+    public function update(TipoAmenazaRequest $request,$id)
+    {
+    	$affectedRows  = TipoAmenazas::where('idtipoamenaza','=',$id)
+        ->update(['idtipoamenaza'=> $request->get('idtipoamenaza'),
+            
+            'nombretipoame' =>$request->get('nombretipoame'),
+            'descriptipoame' =>$request->get('descriptipoame')]);
+        return Redirect::to('tipoamen');
+    }   
+    
+    public function destroy($id)
+    {
+    	$affectedRows  = TipoAmenazas::where('idtipoamenaza','=',$id)->delete();
+      $tipoamenaza->update();
+        return Redirect::to('tipoamen');
+    }
+}
+
+    

@@ -9,7 +9,7 @@ class Riesgo extends Model
 
     protected $table = 'riesgo';
 
-    protected $primparykey = 'idriesgo';
+    protected $primparyKey = 'idriesgo';
 
     public $timestamps =false;
 

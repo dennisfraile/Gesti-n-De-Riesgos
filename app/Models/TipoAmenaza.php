@@ -9,7 +9,7 @@ class TipoAmenaza extends Model
     //
     protected $table = 'tipoamenaza';
 
-    protected $primparykey = 'idtipoamenaza';
+    protected $primparyKey = 'idtipoamenaza';
 
     public $timestamps =false;
 

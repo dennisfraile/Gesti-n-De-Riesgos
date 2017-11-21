@@ -9,7 +9,7 @@ class Rol extends Model
     //
     protected $table = 'rol';
 
-    protected $primparykey = 'idrol';
+    protected $primparyKey = 'idrol';
 
     public $timestamps =false;
     

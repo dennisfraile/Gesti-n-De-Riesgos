@@ -9,7 +9,7 @@ class Amenaza extends Model
     //
     protected $table = 'amenaza';
 
-    protected $primparykey = 'idamenaza';
+    protected $primparyKey = 'idamenaza';
 
     public $timestamps =false;
 

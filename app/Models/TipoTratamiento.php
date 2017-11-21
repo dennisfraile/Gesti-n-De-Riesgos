@@ -9,12 +9,13 @@ class TipoTratamiento extends Model
     //
     protected $table = 'tipotratamiento';
 
-    protected $primarykey = 'idtipotratamiento';
+    protected $primaryKey = 'idtipotratamiento';
 
     public $timestamps=false;
 
 
     protected $fillable = [
+        
     	'nombretipotrata', 
     	'descriptipotrata'
     ];

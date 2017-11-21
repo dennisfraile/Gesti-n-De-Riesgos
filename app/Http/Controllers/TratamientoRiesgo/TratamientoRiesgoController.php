@@ -1,115 +1,97 @@
 <?php
 
-namespace App\Http\Controllers\TratamientoRiesgo;
+namespace GestionDeRiesgos\Http\Controllers\TratamientoRiesgo;
 
 use Illuminate\Http\Request;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use \App\Models\TratamientoRiesgo\TratamientoRiesgo;
-use \App\Models\TratamientoRiesgo\TipoTratamiento;
 
+use GestionDeRiesgos\Http\Requests;
+use Illuminate\Support\Facades\Redirect;
+use GestionDeRiesgos\Http\Controllers\Controller;
+use GestionDeRiesgos\Models\TratamientoRiesgo;
+use GestionDeRiesgos\Models\TipoTratamiento;
+use GestionDeRiesgos\Models\Activo;
+use Session;
+use DB;
 class TratamientoRiesgoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+	public function __construct()
     {
-        //
-        $tratamientoriesgos = TratamientoRiesgo::select('tratamientoriesgo.idtratamiento',
-        'tratamientoriesgo.nombretratamiento as tratamientoriesgo','tratamientoriesgo.descriptratamiento as tratamientoriesgo',
-        'tipotratamiento.nombretipotrata as tipotratamiento')
-        ->join('tipotratamiento','tipotratamiento.idtipotratamiento','=','tratamientoriesgo.id')
-        ->get();
-        return View('tratamientoriesgo/tratamientoriesgo')->with('tratamientoriesgos',$tratamientoriesgos);
-        
+
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function index(Request $request)
+    {
+        if ($request)
+        {
+           
+            $tratamientos=DB::table('tratamientoriesgo as tratamiento')
+            ->join('activo as act','act.idactivo','=','tratamiento.idactivo')
+            ->join('tipotratamiento as tt','tt.idtipotratamiento','=','tratamiento.idtipotratamiento')
+            ->select('tratamiento.idactivo','act.nombreactivo','tt.idtipotratamiento','tt.nombretipotrata as tipotratamiento',
+            'tratamiento.idtratamiento','tratamiento.nombretratamiento','tratamiento.descriptratamiento')->get();
+            
+            return view('tratamientoriesgo.index',["tratamientos"=>$tratamientos]);
+        }
+    }
+ 
     public function create()
     {
-        //
-        $tipotratamiento = TipoTratamiento::plists('nombretipotrata','idtipotratamiento')->prepend('Seleccioname el Tipo de Tratamiento');
-        return View('tratamientoriesgo.create')->with('tipotratamiento',$tipotratamiento);
+        $activos=DB::table('activo as act')
+        ->select('act.idactivo','act.nombreactivo')->get();
+
+        $tipotratamiento=DB::table('tipotratamiento as tt')
+        ->select('tt.idtipotratamiento','tt.nombretipotrata')->get();
+        
+    	return view("tratamientoriesgo.create",["activos"=>$activos,"tipotratamiento"=>$tipotratamiento]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
-        TratamientoRiesgo::create($request->all());   
-       // Session::flash('save','Se ha creado correctamente'); 
-        return redirect()->route('tratamientoriesgo.tratamientoriesgo');
+    	$tratamiento=new TratamientoRiesgo;
+    	$tratamiento->idtipotratamiento=$request->get('idtipotratamiento');
+    	$tratamiento->idactivo=$request->get('idactivo');
+        $tratamiento->nombretratamiento=$request->get('nombretratamiento');
+        $tratamiento->descriptratamiento=$request->get('descriptratamiento');
+        
+        $tratamiento->save();
+        
+        return Redirect::to('tratamientoriesgo');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+        
     public function show($id)
     {
-        //
-        $tratamientoriesgos = TratamientoRiesgo::FindOrFail($id);
-        return view('product.show')->with('products',$tratamientoriesgos);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-        $tipotratamiento = TipoTratamiento::lists('nombretipotrata','idtipotratamiento')->prepend('Seleccioname el tipo
-        de tratamiento');
-        $tratamientoriesgos = TratamientoRIesgo::FindOrFail($id);
-        return view('tipotratamiento.edit', array('tratamientoriesgos'=>$tratamientoriesgoss,'tipotratamientos'=>$tipotratamiento));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-        $tratamientoriesgos = TratamientoRiesgo::FindOrFail($id);
-        $input = $request->all();
-        $tratamientoriesgos->fill($input)->save();
         
-        return redirect()->route('tratamientoriesgo.tratamientoriesgo');
     }
+        
+    public function edit($id)
+    {   
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+       $activos=DB::table('activo as act')
+        ->select('act.idactivo','act.nombreactivo')->get();
+        $tipotratamiento=DB::table('tipotratamiento as tt')
+        ->select('tt.idtipotratamiento','tt.nombretipotrata')->get();
+        return view("tratamientoriesgo.edit",["tratamientos"=>
+        TratamientoRiesgo::findOrFail($id),"activos"=>$activos,"tipotratamiento"=>$tipotratamiento]);
+
+    }
+        
+    public function update(Request $request,$id)
+    {
+
+    	$affectedRows = TratamientoRiesgo::where('idtratamiento','=',$id)
+        ->update([
+            'idtipotratamiento'=> $request->get('idtipotratamiento'),
+            'idactivo'=>$request->get('idactivo'),
+            'nombretratamiento' =>$request->get('nombretratamiento'),
+            'descriptratamiento' =>$request->get('descriptratamiento')]);
+
+        return Redirect::to('tratamientoriesgo');
+    }   
+
     public function destroy($id)
     {
-        //
-        $tratamientoriesgos = TratamientoRiesgo::FindOrFail($id);
-        $tratamientoriesgos->delete();
-        
-        return redirect()->route('tratamientoriesgo.tratamientoriesgo');
+    	$affectedRows = TratamientoRiesgo::where('idtratamiento','=',$id)->delete();
+        return Redirect::to('tratamientoriesgo');
+
     }
 }

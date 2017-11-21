@@ -1,53 +1,48 @@
 @extends('layouts.admin')
-
-@section('title','Editar Tipo Tratamiento')
-
 @section('contenido')
 
-<ol class="breadcrumb">
-     <li><a href="{{url('dashboard')}}">Principal</a></li>
-     <li><a href="{{url('tipotratamiento')}}"> Tipo Tratamientos</a></li>
-     <li class="active">Editar Tipo de Tratamiento</li>
-   </ol>
- 
-
-   <div class="row">
-     <div class="col-md-8">
-
-        <div class="panel panel-default">
-          <div class="panel-heading">
-             Editar Tipo Tratamiento
-           </div>
-          <div class="panel-body">
-
-
-            {!!Form::model($tratamientoriesgos,['route'=>['ttiporatamiento.update',$tipotratamientos->idtipotratamiento],'method'=>'PUT'])!!}
-            
-	      <div class="form-group">
-                  {!!form::label('Nombre')!!}
-                  {!!form::text('nombretipotrata',null,['idtipotratamiento'=>'nombretipotrata','class'=>'form-control','placeholder'=>'Digite el  Nombre'])!!}
-             </div>
-             <div class="form-group">
-               <label for="exampleInputPassword1">Descripcion</label>
-                  {!!form::label('Descripcion')!!}
-                  {!!form::text('descriptipotrata',null,['idtipotratamiento'=>'descriptipotrata','class'=>'form-control','placeholder'=>'Digite la descripcion'])!!}
-             </div>
-                 {!!form::submit('Grabar',['name'=>'grabar','id'=>'grabar','content'=>'<span>Grabar</span>','class'=>'btn btn-warning btn-sm m-t-10'])!!}
-              <button type="button" id='cancelar'  name='cancelar' class="btn btn-info btn-sm m-t-10" >Cancelar</button>             
-          {!!Form::close()!!}
-
-
-           </div>
-        </div>
-
-           
-           </div>
+<div class="row">
+   <div class="col-lg-12">
+      <ol class="breadcrumb">
+         <li> <i class="fa fa-home"></i> <a href="{{url('/admin/perfilpuesto')}}"> Administrar tipo de tratamiento</a></li>
+         <li class="active"> <i class="fa fa-desktop"></i> Editar informacion del tipo de tratamiento</li>
+      </ol>
    </div>
+</div>
+<div class="row">
+   <div class="col-lg-12">
+      <h3>Editar Tipo de Tratamiento</h3>
+   </div>
+</div>
+{!!Form::model($tipotratamientos,['method'=>'PATCH','route'=>['tipotratamiento.update',$tipotratamientos->idtipotratamiento]])!!}
+{{Form::token()}}
 
-<script>
-  $("#cancelar").click(function(event)
-  {
-      document.location.href = "{{ route('tratamientoriesgo.tratamientoriesgo')}}";
-  });
-</script>
-@stop
+<div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      
+
+         <div class="form-group">
+               <label for="nombretipotrata">Nombre Tipo de Tratamiento</label>
+               <input type="text" name="nombretipotrata" required value="{{$tipotratamientos->nombretipotrata}}" class="form-control" placeholder="Nombre...">
+         </div>
+
+           <div class="form-group">
+               <label for="descriptipotrata">Descripcion</label>
+               <input type="text" name="descriptipotrata" required value="{{$tipotratamientos->descriptipotrata}}" class="form-control" placeholder="Descripcion...">
+         </div>
+      
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+         <div class="form-group">
+               <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-floppy-disk"></i> Guardar</button>
+               <a href="{{url('tipotratamiento')}}" class="btn btn-danger" role="button"><i class="glyphicon glyphicon-remove-circle"></i> Cancelar</a>
+         </div>
+
+       </div>
+
+   </div>
+</div>
+
+
+{!!Form::close()!!}			
+@endsection
