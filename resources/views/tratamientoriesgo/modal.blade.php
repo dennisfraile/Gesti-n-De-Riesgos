@@ -14,7 +14,7 @@ role="dialog" tabindex="-1" id="modal-delete-{{$tratamiento->idtratamiento}}">
 				<p>¿Desea eliminar el Tratamiento?</p>
 				<div>
 			<p>{{$tratamiento->nombretratamiento}}</p>
-			<p>{{$tratamiento->descriptratamiento}}</p>
+			
 			</div>
 			</div>
 			

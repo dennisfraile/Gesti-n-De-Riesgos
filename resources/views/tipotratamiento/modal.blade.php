@@ -15,7 +15,6 @@ role="dialog" tabindex="-1" id="modal-delete-{{$tipotratamiento->idtipotratamien
 				<p>¿Desea eliminar el Tipo de Tratamiento?</p>
 				<div>
 			<p>{{$tipotratamiento->nombretipotrata}}</p>
-			<p>{{$tipotratamiento->descriptipotrata}}</p>
 			</div>
 			</div>
 			<div class="modal-footer">

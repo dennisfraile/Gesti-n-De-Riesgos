@@ -28,5 +28,9 @@ Route::group(['middleware'=>['web']], function ()
     route::resource('eliminarEmpresa','eliminarEmpresaController');
     Route::resource('control','ControlRiesgoController');
     Route::resource('activo','ActivoController');
+	/*amenazas
+	*/
+	Route::resource('amenazas','AmenazaController');
+	
 });
 
