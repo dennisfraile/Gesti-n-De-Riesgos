@@ -35,11 +35,11 @@
 					<td>{{ $emp->nombreempresa}}</td>
 					<td>{{ $emp->descripempresa}}</td>
 					<td>
-                        <a href="{{URL::action('EmpresaController@edit',$emp->idempresa)}}" data-target="#modal-delete-{{$emp->idempresa}}" data-toggle="modal"><button class="btn btn-xs btn-danger">
+                        <a href="{{URL::action('EmpresaController@destroy',$emp->idempresa)}}" data-target="#modal-delete-{{$emp->idempresa}}" data-toggle="modal"><button class="btn btn-xs btn-danger">
                         <i class="glyphicon glyphicon-remove"></i> Eliminar</button></a>
 					</td>
 				</tr>
-				@include('activo.modal')f
+				@include('empresa.EmpresaShow')
 				@endforeach
 			</table>
 		</div>

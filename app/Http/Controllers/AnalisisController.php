@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use GestionDeRiesgos\Http\Requests;
 use GestionDeRiesgos\Activo;
+use GestionDeRiesgos\Analisis;
 use Illuminate\Support\Facades\Redirect;
 use Session;
 use DB;
@@ -22,8 +23,8 @@ class AnalisisController extends Controller
         if ($request)
         {
            
-            $grafico=DB::table('analisis as an')
-            ->join('activo  as a','a.idactivo','=','an.idactivo')
+            $anactivos=DB::table('analisis as an')
+            ->join('activo as a','a.idactivo','=','an.idactivo')
             ->select('an.idactivo','a.nombreactivo','an.idanalisis'
             ,'an.disponibilidad'
             ,'an.confidencialidad','an.integridad',
@@ -31,7 +32,7 @@ class AnalisisController extends Controller
             'an.impacto','an.probocurrencia',
             'an.riesgo')->get();
             
-            return view('grafico.index',["grafico"=>$grafico]);
+            return view('activo.AnalizarActivo',["anactivos"=>$anactivos]);
         }
     }
  
@@ -45,20 +46,8 @@ class AnalisisController extends Controller
     }
 
     public function store(Request $request)
-    {
-    	$anactivo = new Analisis;
-    	$anactivo->idactivo=$request->get('idactivo');
-    	$anactivo->disponibilidad=$request->get('disponibilidad');
-        $anactivo->confidencialidad=$request->get('confidencialidad');
-        $anactivo->integridad=$request->get('integridad');
-        $anactivo->degradacion=$request->get('degradacion');
-        $anactivo->valoractivo=$request->get('valoractivo');
-        $anactivo->impacto=$request->get('impacto');
-        $anactivo->riesgo=$request->get('riesgo');   
-        $anactivo->probocurrencia=$request->get('probocurrencia'); 
-        $anactivo->save();
-        
-        return Redirect::to('analisis');
+    {   
+    	
     }
         
     public function show($id)

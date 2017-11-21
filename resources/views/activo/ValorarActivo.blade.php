@@ -15,7 +15,7 @@
    </div>
 </div>
 
-{!!Form::open(array('url'=>'analisis.create','method'=>'POST','autocomplete'=>'off'))!!}
+{!!Form::open(array('url'=>'valorar','method'=>'POST','autocomplete'=>'off'))!!}
    {{Form::token()}}
 
 <div class="row">
@@ -23,9 +23,9 @@
 
          <div class="form-group">
                <label class="label label-primary" for="activo">Activo</label>
-              @foreach($anactivo as $anac)
-               <select class="form-control has-success" name="activo">
-      				    <option value="{{ $anac->idactivo }}">{{ $anac->nombreactivo }}</option>
+              @foreach($activos as $anac)
+               <select class="form-control has-success" id="idactivo">
+      				    <option value="{{ $anac->idactivo }}" >{{ $anac->nombreactivo }}</option>
     			     </select>
               @endforeach
          </div>

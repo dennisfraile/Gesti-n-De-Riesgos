@@ -5,9 +5,13 @@ namespace GestionDeRiesgos\Http\Controllers;
 use Illuminate\Http\Request;
 
 use GestionDeRiesgos\Http\Requests;
-use GestionDeRiesgos\Models\Analisis;
+use GestionDeRiesgos\Http\Requests\EmpresaRequest;
+use GestionDeRiesgos\Models\Empresa;
+use Illuminate\Support\Facades\Redirect;
+use Session;
+use DB; 
 
-class GraficoController extends Controller
+class eliminarEmpresaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,18 +20,11 @@ class GraficoController extends Controller
      */
     public function index()
     {
-        //
-        $grafico=DB::table('analisis as an')
-        ->join('activo  as a','a.idactivo','=','an.idactivo')
-        ->select('an.idactivo','a.nombreactivo','an.idanalisis'
-        ,'an.disponibilidad'
-        ,'an.confidencialidad','an.integridad',
-        'an.valoractivo','an.degradacion',
-        'an.impacto','an.probocurrencia',
-        'an.riesgo')->get();
-        
-        return view('grafico.index',["grafico"=>$grafico]);
+        $empresa = DB::table('empresa')
+        ->select('idempresa','nombreempresa','descripempresa', 'politica','objetivo','alcance')
+        ->get();
 
+        return view('empresa.Eliminar',["empresa"=>$empresa]); 
     }
 
     /**
@@ -93,6 +90,7 @@ class GraficoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $affectedRows = Empresa::where('idempresa','=',$id)->delete();
+        return Redirect::to('eliminarEmpresa');
     }
 }

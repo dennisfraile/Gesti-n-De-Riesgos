@@ -72,4 +72,9 @@ class EmpresaController extends Controller
 
         return Redirect::to('empresa');
     }
+
+    public function destroy($id)
+    {
+
+    }
 }

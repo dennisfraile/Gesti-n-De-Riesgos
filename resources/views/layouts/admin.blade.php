@@ -96,6 +96,7 @@
               <ul class="treeview-menu">
                 <li><a href="{{url('/empresa/create')}}"><i class="fa fa-circle-o"></i> Agregar Empresa</a></li>
                 <li><a href="{{url('/empresa')}}"><i class="fa fa-circle-o"></i> Visualizar Empresa</a></li>
+                <li><a href="{{url('eliminarEmpresa')}}"><i class="fa fa-circle-o"></i> Eliminar Empresas</a></li>
               </ul>
             </li>
 
@@ -120,7 +121,7 @@
               <ul class="treeview-menu">
                 <li><a href="{{url('activo/create')}}"><i class="fa fa-circle-o"></i> Nuevo Activo</a></li>
                 <li><a href="{{url('activo')}}"><i class="fa fa-circle-o"></i> Gestionar Activo</a></li>
-                <li><a href="{{url('activo')}}"><i class="fa fa-circle-o"></i> Analizar Activos</a></li>
+                <li><a href="{{url('analisis')}}"><i class="fa fa-circle-o"></i> Analizar Activos</a></li>
               </ul>
             </li>
             <li class="treeview">

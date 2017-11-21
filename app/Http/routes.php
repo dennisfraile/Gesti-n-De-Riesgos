@@ -20,10 +20,12 @@ Route::group(['middleware'=>['web']], function ()
 	
     route::resource('tratamientoriesgo','TratamientoRiesgo\TratamientoRiesgoController');
     route::resource('tipotratamiento','TratamientoRiesgo\TipoTratamientoRiesgoControlles');
-    route::resource('analisis', 'AnalisisController');  
+    route::resource('analisis', 'AnalisisController'); 
+    route::resource('valorar', 'ValorarActivoController');  
     route::resource('/','HomeController');
     route::resource('vulnerabilidad','VulnerabilidadController');
     route::resource('empresa','EmpresaController');
+    route::resource('eliminarEmpresa','eliminarEmpresaController');
     Route::resource('control','ControlRiesgoController');
     Route::resource('activo','ActivoController');
 });
